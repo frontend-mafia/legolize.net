@@ -14,12 +14,13 @@ var gulp = require('gulp'),
 	inject = require("gulp-inject"),
 	preprocess = require('gulp-preprocess'),
 	gutil = require('gulp-util'),
+	es = require('event-stream'),
 	deploy = require('gulp-gh-pages');
 
 var config = require('./config.json');
 
 // ---------- Default ----------
-gulp.task('default', ['less', 'js-inject', 'server', 'watch'], function () {});
+gulp.task('default', ['less', 'js-inject', 'copy-app-modules', 'server', 'watch'], function () {});
 
 // ---------- Watch for changes ----------
 gulp.task('watch', function () {
@@ -71,7 +72,7 @@ for ( var vendor in vendorConfig ) {
 	vendorScripts.push(path);
 }
 
-// ---------- Inject ----------
+// ---------- Inject ----------1
 gulp.task('js-inject', function () {
 	gutil.log(gutil.colors.black.bgGreen('Injecting file references into template'));
 
@@ -87,13 +88,24 @@ gulp.task('js-inject', function () {
 			starttag: '<!-- inject:appjs -->'
 		}))
 		.pipe(preprocess())
-		.pipe(gulp.dest(config.paths.src));
+		.pipe(gulp.dest(config.paths.dist));
+});
+
+// ---------- Inject ----------
+gulp.task('copy-app-modules', function () {
+	var jsStream = gulp.src(config.paths.src + config.paths.modules + '**/*.js')
+		.pipe(gulp.dest(config.paths.dist + config.paths.modules));
+
+	var htmlStream = gulp.src(config.paths.src + config.paths.modules + '**/*.html')
+		.pipe(gulp.dest(config.paths.dist + config.paths.modules));
+
+	return es.concat(htmlStream, jsStream);
 });
 
 // ---------- Server ----------
 gulp.task('server', function () {
 	connect.server({
-		root: config.paths.src,
+		root: config.paths.dist,
 		port: config.server.port,
 		livereload: config.server.livereload
 	});

@@ -13,6 +13,7 @@
   "author": "Haukur Már Böðvarsson",
   "license": "ISC",
   "dependencies": {
+    "event-stream": "^3.1.7",
     "gulp": "^3.8.9",
     "gulp-autoprefixer": "^1.0.1",
     "gulp-changed": "^1.0.0",
