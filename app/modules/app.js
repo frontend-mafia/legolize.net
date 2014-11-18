@@ -2,12 +2,13 @@
 (function () {
 	'use strict';
 
-	angular.module('legolize', [
+	angular.module('app', [
+		'app.home',
 		'ui.router'
 	]);
 
 	angular
-		.module('legolize')
+		.module('app')
 		.config(Config)
 		.controller('AppCtrl', AppCtrl);
 
@@ -19,9 +20,7 @@
 
 		// Route configs
 		// -----------------------------------------------------
-		$urlRouterProvider.otherwise('/');
 
-		//TODO: Every controller for routes is being called twice, why?
 		// ----- Abstract parent state -----
 		var abstract = {
 			name: 'app',
@@ -33,6 +32,8 @@
 		// ----- Register states -----
 		$stateProvider
 			.state(abstract);
+
+		$urlRouterProvider.otherwise('/');
 	}
 
 	// Controller

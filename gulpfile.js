@@ -20,12 +20,14 @@ var gulp = require('gulp'),
 var config = require('./config.json');
 
 // ---------- Default ----------
-gulp.task('default', ['less', 'js-inject', 'copy-app-modules', 'server', 'watch'], function () {});
+gulp.task('default', ['less', 'js-inject', 'copy-js', 'copy-html', 'server', 'watch'], function () {});
 
 // ---------- Watch for changes ----------
 gulp.task('watch', function () {
 	// Watch for all changes
 	gulp.watch([config.paths.src + config.paths.assets + config.styles.lessFolderToCompile + config.styles.lessFilePatternToWatch], ['less']);
+	gulp.watch([config.paths.src + '**/*.html'], ['copy-html']);
+	gulp.watch([config.paths.src + '**/*.js'], ['copy-js']);
 });
 
 /* ------------------------------------------------------
@@ -92,20 +94,25 @@ gulp.task('js-inject', function () {
 });
 
 // ---------- Inject ----------
-gulp.task('copy-app-modules', function () {
+// TODO: Maybe not have all vendors copied for every change
+gulp.task('copy-js', function () {
 	var vendorStream = gulp.src(config.paths.src + config.paths.assets + config.paths.vendors + '**/*.js')
 		.pipe(gulp.dest(config.paths.dist + config.paths.assets + config.paths.vendors));
 
 	var jsStream = gulp.src(config.paths.src + config.paths.modules + '**/*.js')
 		.pipe(gulp.dest(config.paths.dist + config.paths.modules));
 
+	return es.concat(jsStream, vendorStream);
+});
+
+gulp.task('copy-html', function () {
 	var htmlStream = gulp.src(config.paths.src + config.paths.modules + '**/*.html')
 		.pipe(gulp.dest(config.paths.dist + config.paths.modules));
 
 	var templateStream = gulp.src(config.paths.src + config.paths.templates + '**/*.html')
 		.pipe(gulp.dest(config.paths.dist + config.paths.templates));
 
-	return es.concat(htmlStream, jsStream, vendorStream, templateStream);
+	return es.concat(htmlStream, templateStream);
 });
 
 // ---------- Server ----------
