@@ -39,7 +39,7 @@ gulp.task('less', function () {
 	gulp.src(config.paths.src + config.paths.assets + config.styles.lessFolderToCompile + config.styles.lessFilePatternToCompile)
 		.pipe(gutil.log('Folder: ', gutil.colors.blue(config.paths.src + config.paths.assets + config.styles.lessFolderToCompile)).noop())
 		.pipe(filelog()) // Prints out the LESS file to be compiled
-		.pipe(changed(config.paths.src + config.paths.assets + config.styles.cssOutputFolder)) // Only compile changes
+		.pipe(changed(config.paths.dist + config.paths.assets + config.styles.cssOutputFolder)) // Only compile changes
 		.pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
 		.pipe(less({ strictImports: true, syncImport: true }))
 		.pipe(prefix({
@@ -47,7 +47,7 @@ gulp.task('less', function () {
 			cascade: true
 		}))
 		.pipe(gulpif(config.styles.minifyCss, cssmin())) // Minify if config set
-		.pipe(gulp.dest(config.paths.src + config.paths.assets + config.styles.cssOutputFolder)); // Copy to destination folder
+		.pipe(gulp.dest(config.paths.dist + config.paths.assets + config.styles.cssOutputFolder)); // Copy to destination folder
 });
 
 /* ------------------------------------------------------
