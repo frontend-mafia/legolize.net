@@ -13,7 +13,8 @@ var gulp = require('gulp'),
 	gulpif = require('gulp-if'),
 	inject = require("gulp-inject"),
 	preprocess = require('gulp-preprocess'),
-	gutil = require('gulp-util');
+	gutil = require('gulp-util'),
+	deploy = require('gulp-gh-pages');
 
 var config = require('./config.json');
 
@@ -96,4 +97,10 @@ gulp.task('server', function () {
 		port: config.server.port,
 		livereload: config.server.livereload
 	});
+});
+
+// ---------- Deploy to gh pages ----------
+gulp.task('deploy', function () {
+	return gulp.src('./dist/**/*')
+		.pipe(deploy(options));
 });
