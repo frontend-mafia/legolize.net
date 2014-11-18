@@ -93,13 +93,19 @@ gulp.task('js-inject', function () {
 
 // ---------- Inject ----------
 gulp.task('copy-app-modules', function () {
+	var vendorStream = gulp.src(config.paths.src + config.paths.assets + config.paths.vendors + '**/*.js')
+		.pipe(gulp.dest(config.paths.dist + config.paths.assets + config.paths.vendors));
+
 	var jsStream = gulp.src(config.paths.src + config.paths.modules + '**/*.js')
 		.pipe(gulp.dest(config.paths.dist + config.paths.modules));
 
 	var htmlStream = gulp.src(config.paths.src + config.paths.modules + '**/*.html')
 		.pipe(gulp.dest(config.paths.dist + config.paths.modules));
 
-	return es.concat(htmlStream, jsStream);
+	var templateStream = gulp.src(config.paths.src + config.paths.templates + '**/*.html')
+		.pipe(gulp.dest(config.paths.dist + config.paths.templates));
+
+	return es.concat(htmlStream, jsStream, vendorStream, templateStream);
 });
 
 // ---------- Server ----------

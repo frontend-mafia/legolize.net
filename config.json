@@ -4,7 +4,8 @@
     "assets": "assets/",
     "dist": "dist/",
     "vendors": "vendor/",
-    "modules": "modules/"
+    "modules": "modules/",
+    "templates": "templates/"
   },
   "styles": {
     "lessFolderToCompile": "less/",
@@ -18,7 +19,7 @@
     "livereload": true
   },
   "vendors": [
-    "jquery/dist/jquery.min.js",
+    "jquery/dist/jquery.js",
     "angular/angular.js",
     "angular-resource/angular-resource.js",
     "angular-ui-router/release/angular-ui-router.js"

@@ -26,7 +26,7 @@
 		var abstract = {
 			name: 'app',
 			abstract: true,
-			templateUrl: 'layouts/default.html',
+			templateUrl: 'templates/default.html',
 			controller: 'AppCtrl'
 		};
 
