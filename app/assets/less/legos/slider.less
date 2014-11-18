@@ -1,0 +1,151 @@
+/********************************************
+	Slider
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+
+@slider-default-borderColor: #dedede;
+@slider-default-fontColor: #585858;
+
+@slider-focus-borderColor: #dedede;
+@slider-focus-fontColor: #585858;
+
+@slider-active-borderColor: #c8c8c8;
+@slider-active-fontColor: #06a3d5;
+
+@slider-disabled-borderColor: #cacaca;
+@slider-disabled-fontColor: #888;
+
+// -------------------- Core LEGO --------------------
+.Slider {
+	.Slider();
+
+	.margin-top(1);
+	.margin-bottom(1);
+}
+
+// -------------------- Descendants --------------------
+.Slider-bar {
+	.Slider-bar();
+}
+
+.Slider-progress {
+	.Slider-progress();
+}
+
+.Slider-pointer {
+	.Slider-pointer();
+}
+
+.Slider-statusMark {
+	.Slider-statusMark();
+}
+
+.Slider-dragbar {
+	.Slider-dragbar();
+}
+
+.Slider-dragbarLabel {
+	.Slider-dragbarLabel();
+}
+
+.Slider-label {
+	.Slider-label();
+}
+
+.Slider-icon {
+	.Slider-icon();
+}
+
+// -------------------- States --------------------
+
+// -------------------- Modifiers --------------------
+.Slider-progress--primary {
+	.Slider-progress--primary();
+}
+
+.Slider-progress--success {
+	.Slider-progress--success();
+}
+
+.Slider-progress--warning {
+	.Slider-progress--warning();
+}
+
+.Slider-progress--danger {
+	.Slider-progress--danger();
+}
+
+//Slider pointers
+.Slider-pointer--image {
+	.Slider-pointer--image();
+}
+
+.Slider-pointer--left {
+	left: 0px;
+	right: auto;
+}
+
+.Slider-pointer--center {
+	left: 50%;
+}
+
+.Slider-pointer--right {
+	left: auto;
+	right: 0;
+}
+
+//Slider labels
+.Slider-label--left {
+	float: left;
+}
+
+.Slider-label--center {
+	float: none;
+}
+
+.Slider-label--right {
+	float: right;
+}
+
+//Slider icons
+.Slider-icon--left {
+	left: 0;
+
+	&.Icon--caret-double-right {
+		left: -12px;
+	}
+}
+
+.Slider-icon--center {
+	left: 50%;
+	margin-left: -5px; //ToDo:...
+}
+
+.Slider-icon--right {
+	&.Icon--caret-double-left {
+		right: -12px;
+	}
+}
+
+.Slider-dragbarLabel--top {
+	.Slider-dragbarLabel--top();
+}
+.Slider-dragbarLabel--right {
+	.Slider-dragbarLabel--right();
+}
+.Slider-dragbarLabel--bottom {
+	.Slider-dragbarLabel--bottom();
+}
+.Slider-dragbarLabel--left {
+	.Slider-dragbarLabel--left();
+}

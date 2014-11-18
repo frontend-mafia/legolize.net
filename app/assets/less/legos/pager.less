@@ -1,0 +1,56 @@
+/********************************************
+	Label
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+//<button class="Button Button--myButton"></button>
+
+// -------------------- Variables --------------------
+
+// -------------------- Core LEGO --------------------
+.Pager {
+	.Pager();
+}
+
+// -------------------- Descendants --------------------
+
+.Pager-item {
+	.Pager-item();
+
+	.Selectbox {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.Pager-separator {
+	.Pager-separator();
+}
+
+// -------------------- Modifiers --------------------
+.Pager-item--left {
+	float: left;
+}
+
+.Pager-item--right {
+	float: right;
+}
+
+// -------------------- States --------------------
+.Pager-item.is-active {
+	.Pager-item-is-active();
+}
+
+.Pager-item.is-disabled {
+	.Pager-item-is-disabled();
+}
+
+// -------------------- Type modifiers --------------------

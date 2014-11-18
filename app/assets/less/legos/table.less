@@ -1,0 +1,214 @@
+/********************************************
+	Table
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+@table-cell--primary:   @brandPrimary;
+@table-cell--secondary: @brandSecondary;
+@table-cell--success:   @brandSuccess;
+@table-cell--warning:   @brandWarning;
+@table-cell--danger:    @brandDanger;
+
+@table-cell--primary-hover:   lighten(@brandPrimary, 10%);
+@table-cell--secondary-hover: lighten(@brandSecondary, 10%);
+@table-cell--success-hover:   lighten(@brandSuccess, 10%);
+@table-cell--warning-hover:   lighten(@brandWarning, 10%);
+@table-cell--danger-hover:    lighten(@brandDanger, 10%);
+
+@table-cell--primary-light:   #cdedf7; //lighten(@table-cell--primary, 25%);
+@table-cell--secondary-light: lighten(@table-cell--secondary, 25%);
+@table-cell--success-light:   lighten(@table-cell--success, 25%);
+@table-cell--warning-light:   lighten(@table-cell--warning, 25%);
+@table-cell--danger-light:    lighten(@table-cell--danger, 25%);
+
+@table-cell--primary-light-hover:   #e3f5fb; //lighten(@table-cell--primary-light, 10%);
+@table-cell--secondary-light-hover: lighten(@table-cell--secondary-light, 10%);
+@table-cell--success-light-hover:   lighten(@table-cell--success-light, 10%);
+@table-cell--warning-light-hover:   lighten(@table-cell--warning-light, 10%);
+@table-cell--danger-light-hover:    lighten(@table-cell--danger-light, 10%);
+
+// -------------------- Core LEGO --------------------
+.Table {
+	.Table();
+}
+
+// -------------------- Descendants --------------------
+.Table-cell {
+	.Table-cell();
+}
+
+.Table-row {
+	.Table-row();
+}
+
+.Table-head {
+	.Table-head();
+}
+
+.Table-body {
+	.Table-body()
+}
+
+.Table-footer {
+	.Table-footer();
+}
+
+.Table-caption {
+	.Table-caption();
+}
+
+// -------------------- Table cell size  --------------------
+.Table-cell--12 {
+	width: 12%;
+}
+
+.Table-cell--24 {
+	width: 24%;
+}
+
+.Table-cell--36 {
+	width: 36%;
+}
+
+.Table-cell--50 {
+	width: 50%;
+}
+
+.Table-cell--64 {
+	width: 64%;
+}
+
+.Table-cell--76 {
+	width: 76%;
+}
+
+.Table-cell--88 {
+	width: 88%;
+}
+
+.Table-cell--100 {
+	width: 100%;
+}
+
+
+// -------------------- Table type modifiers --------------------
+.Table--striped {
+	.Table--striped();
+}
+
+.Table--bordered {
+	.Table--bordered();
+}
+
+.Table--condensed {
+	.Table--condensed()
+}
+
+.Table-row--highlight {
+	.Table-row--highlight();
+}
+
+.Table-row--hover {
+	.Table-row--hover()
+}
+
+.Table-row--noBorder {
+	.Table-row--noBorder();
+}
+
+.Table-row--full {
+	.Table-row--full();
+}
+
+// -------------------- Table-cell type modifiers --------------------
+//White background + hover effect
+.Table-cell--primary-simple {
+	.tableRowVariant(#fff, inherit, @brandPrimary, #fff);
+}
+
+.Table-cell--secondary-simple {
+	.tableRowVariant(#fff, inherit, @brandSecondary, #fff);
+}
+
+.Table-cell--success-simple {
+	.tableRowVariant(#fff, inherit, @brandSuccess, #fff);
+}
+
+.Table-cell--warning-simple {
+	.tableRowVariant(#fff, inherit, @brandWarning, #fff);
+}
+
+.Table-cell--danger-simple {
+	.tableRowVariant(#fff, inherit, @brandDanger, #fff);
+}
+
+//Colored background + hover effect
+.Table-cell--primary {
+	.tableRowVariant(@table-cell--primary, #fff, @table-cell--primary-hover, #fff);
+}
+
+.Table-cell--secondary {
+	.tableRowVariant(@table-cell--secondary, #fff, @table-cell--secondary-hover, #fff);
+}
+
+.Table-cell--success {
+	.tableRowVariant(@table-cell--success, #fff, @table-cell--success-hover, #fff);
+}
+
+.Table-cell--warning {
+	.tableRowVariant(@table-cell--warning, #fff, @table-cell--warning-hover, #fff);
+}
+
+.Table-cell--danger {
+	.tableRowVariant(@table-cell--danger, #fff, @table-cell--danger-hover, #fff);
+}
+
+//Colored background + hover effect
+.Table-cell--primary-light {
+	.tableRowVariant(@table-cell--primary-light, #5B5B5B, @table-cell--primary-light-hover, #5B5B5B);
+}
+
+.Table-cell--secondary-light {
+	.tableRowVariant(@table-cell--secondary-light, #5B5B5B, @table-cell--secondary-light-hover, #5B5B5B);
+}
+
+.Table-cell--success-light {
+	.tableRowVariant(@table-cell--success-light, #5B5B5B, @table-cell--success-light-hover, #5B5B5B);
+}
+
+.Table-cell--warning-light {
+	.tableRowVariant(@table-cell--warning-light, #5B5B5B, @table-cell--warning-light-hover, #5B5B5B);
+}
+
+.Table-cell--danger-light {
+	.tableRowVariant(@table-cell--danger-light, #5B5B5B, @table-cell--danger-light-hover, #5B5B5B);
+}
+
+// -------------------- Table-cell layout modifiers --------------------
+.Table-cell--indented {
+	.Table-cell--indented();
+}
+
+.Table-cell--full {
+	.Table-cell--full();
+}
+
+
+//Custom modifiers - add to legolize??
+
+.Table-cell--top {
+	vertical-align:top;
+}
+
+.Table-cell--right {
+	text-align:right;
+}

@@ -1,0 +1,87 @@
+/********************************************
+	Link
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+@link--default: #666;
+
+@link--primary: #06a3d5;
+@link-hover--primary: #06a3d5;
+@link--secondary: #585858;
+@link-hover--secondary: #585858;
+@link--success: #57a62f;
+@link-hover--success: #57a62f;
+@link--warning: #ffae00;
+@link-hover--warning: #ffae00;
+@link--danger: #d42020;
+@link-hover--danger: #d42020;
+
+@link--xs-fontSize: 11px;
+@link--sm-fontSize: 12px;
+@link--lg-fontSize: 14px;
+@link--xl-fontSize: 20px;
+
+// -------------------- Core LEGO --------------------
+.Link {
+	.Link();
+	.linkTypeVariant(@link--default, @link-hover--primary);
+}
+
+// -------------------- Descendants --------------------
+
+// -------------------- States --------------------
+
+// -------------------- Type modifiers --------------------
+
+.Link--primary {
+	.linkTypeVariant(@link--primary, @link-hover--primary);
+}
+.Link--secondary {
+	.linkTypeVariant(@link--secondary, @link-hover--secondary);
+}
+.Link--success {
+	.linkTypeVariant(@link--success, @link-hover--success);
+}
+.Link--warning {
+	.linkTypeVariant(@link--warning, @link-hover--warning);
+}
+.Link--danger {
+	.linkTypeVariant(@link--danger, @link-hover--danger);
+}
+
+.Link--xs {
+	font-size: @link--xs-fontSize;
+}
+
+.Link--sm {
+	font-size: @link--sm-fontSize;
+}
+
+.Link--lg {
+	font-size: @link--lg-fontSize;
+}
+
+.Link--xl {
+	font-size: @link--xl-fontSize;
+}
+
+//Custom modifiers
+.Link--help {
+	.Link--primary;
+	.Link--xl;
+	font-weight:bold;
+	display:inline-block;
+}
+
+.Link--help-right {
+	float:right;
+}

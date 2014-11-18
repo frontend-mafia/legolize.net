@@ -1,0 +1,28 @@
+/********************************************
+	Modal
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+
+// -------------------- Core LEGO --------------------
+.Modal {
+	.Modal();
+}
+
+// -------------------- Descendants --------------------
+.Modal-body {
+	.Modal-body();
+
+	.Icon.Icon--cancel {
+		cursor: pointer;
+	}
+}

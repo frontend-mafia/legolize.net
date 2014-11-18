@@ -1,0 +1,115 @@
+/********************************************
+	FormField
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+@form--horizontal-label-width: 150px;
+@formIcon-inputs-padding: 30px;
+
+@form-itemLabel--xs-fontSize: @base-fontSize--xs;
+@form-itemLabel--sm-fontSize: @base-fontSize--sm;
+@form-itemLabel--lg-fontSize: @base-fontSize--lg;
+@form-itemLabel--xl-fontSize: @base-fontSize--xl;
+
+// -------------------- Core LEGO --------------------
+.Form {
+	.Form();
+	.margin-top(1);
+	.margin-bottom(1);
+}
+
+// -------------------- Descendants --------------------
+.Form-item {
+	.Form-item();
+	.margin-top(1);
+	.margin-bottom(1);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.Form-itemLabel {
+	.Form-itemLabel();
+	.margin-top(1);
+	.margin-bottom(1);
+}
+
+.Form-icon {
+	.Form-icon();
+}
+
+// -------------------- Modifiers --------------------
+.Form--inline {
+	.Form-item {
+		display: inline-block;
+	}
+}
+
+.Form--horizontal {
+	.Form-item {
+		display: block;
+		width: 100%;
+
+		.Form-itemLabel {
+			width: @form--horizontal-label-width;
+			display: inline-block;
+		}
+
+		.Textbox,
+		.Textarea,
+		.Selectbox {
+			display: inline-block;
+		}
+	}
+}
+
+.Form-icon--left {
+	.Icon {
+		left: 5px;
+	}
+
+	.Textbox,
+	.Textarea,
+	.Selectbox {
+		padding-left: @formIcon-inputs-padding;
+		width: 100%;
+	}
+}
+
+.Form-icon--right {
+	.Icon {
+		right: 5px;
+	}
+	.Textbox,
+	.Textarea,
+	.Selectbox {
+		padding-right: @formIcon-inputs-padding;
+		width: 100%;
+	}
+}
+
+.Form-itemLabel--xs {
+	.formItemLabelSize(@form-itemLabel--xs-fontSize);
+}
+
+.Form-itemLabel--sm {
+	.formItemLabelSize(@form-itemLabel--sm-fontSize);
+}
+
+.Form-itemLabel--lg {
+	.formItemLabelSize(@form-itemLabel--lg-fontSize);
+}
+
+.Form-itemLabel--xl {
+	.formItemLabelSize(@form-itemLabel--xl-fontSize);
+}

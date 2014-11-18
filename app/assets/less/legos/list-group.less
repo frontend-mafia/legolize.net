@@ -1,0 +1,92 @@
+/********************************************
+	ListGroup
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+//<button class="Button Button--myButton"></button>
+
+// -------------------- Variables --------------------
+
+// --- Modifier variables ---
+@listGroup--primary-color: #fff;
+@listGroup--primary-bgColor: #06a3d5;
+@listGroup--primary-header-bgColor: darken(@listGroup--primary-bgColor, 10%);
+@listGroup--primary-heading-color: inherit;
+
+@listGroup--secondary-color: #fff;
+@listGroup--secondary-bgColor: #787878;
+@listGroup--secondary-header-bgColor: darken(@listGroup--secondary-bgColor, 10%);
+@listGroup--secondary-heading-color: inherit;
+
+@listGroup--success-color: #fff;
+@listGroup--success-bgColor: #57a62f;
+@listGroup--success-header-bgColor: darken(@listGroup--success-bgColor, 10%);
+@listGroup--success-heading-color: inherit;
+
+@listGroup--warning-color: #fff;
+@listGroup--warning-bgColor: #ffae00;
+@listGroup--warning-header-bgColor: darken(@listGroup--warning-bgColor, 10%);
+@listGroup--warning-heading-color: inherit;
+
+@listGroup--danger-color: #fff;
+@listGroup--danger-bgColor: #d42020;
+@listGroup--danger-header-bgColor: darken(@listGroup--danger-bgColor, 10%);
+
+// -------------------- Core LEGO --------------------
+.ListGroup {
+	.ListGroup();
+}
+
+// -------------------- Descendants --------------------
+.ListGroup-item {
+	.ListGroup-item ();
+}
+
+.ListGroup-itemHeader {
+	.ListGroup-itemHeader();
+}
+
+.ListGroup-itemBody {
+	.ListGroup-itemBody();
+}
+
+.ListGroup-icon {
+	.ListGroup-icon();
+}
+
+// -------------------- Type modifiers --------------------
+.ListGroup--round {
+	.ListGroup--round ();
+}
+
+.ListGroup--accordion {
+	.ListGroup--accordion ();
+}
+
+.ListGroup-item--primary {
+	.listGroupItemVariant(@listGroup--primary-color, @listGroup--primary-bgColor, @listGroup--primary-header-bgColor);
+}
+
+.ListGroup-item--secondary {
+	.listGroupItemVariant(@listGroup--secondary-color, @listGroup--secondary-bgColor, @listGroup--secondary-header-bgColor);
+}
+
+.ListGroup-item--success {
+	.listGroupItemVariant(@listGroup--success-color, @listGroup--success-bgColor, @listGroup--success-header-bgColor);
+}
+
+.ListGroup-item--warning {
+	.listGroupItemVariant(@listGroup--warning-color, @listGroup--warning-bgColor, @listGroup--warning-header-bgColor);
+}
+
+.ListGroup-item--danger {
+	.listGroupItemVariant(@listGroup--danger-color, @listGroup--danger-bgColor, @listGroup--danger-header-bgColor);
+}

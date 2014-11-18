@@ -1,0 +1,132 @@
+/********************************************
+	Button
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @button--primary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+//<button class="Button Button--myButton"></button>
+
+// -------------------- Variables --------------------
+
+// --- Default variables ---
+@button-fontSize: @base-fontSize;
+@button-lineHeight: @base-lineHeight;
+@button-paddingVertical: 0px;
+@button-borderRadius: 3px;
+@button-borderWidth: 1px;
+@button-borderStyle: solid;
+@button-borderColor: transparent;
+@button-background: #fff;
+
+// Default variant
+@button-color: #333;
+@button-backgroundColor: #fff;
+@button-borderColor: #adadad;
+
+// --- Modifier variables ---
+@button--primary-color: #fff;
+@button--primary-backgroundColor: #06a3d5;
+
+@button--secondary-color: #fff;
+@button--secondary-backgroundColor: #787878;
+
+@button--success-color: #fff;
+@button--success-backgroundColor: #57A62F;
+
+@button--warning-color: #fff;
+@button--warning-backgroundColor: #ffae00;
+
+@button--danger-color: #fff;
+@button--danger-backgroundColor: #D42020;
+
+@button--link-color: inherit;
+@button--link-hover-color: inherit;
+
+@button--xs-fontSize: @base-fontSize--xs;
+@button--xs-borderRadius: 2px;
+
+@button--sm-fontSize: @base-fontSize--sm;
+@button--sm-borderRadius: 3px;
+
+@button--lg-fontSize: @base-fontSize--lg;
+@button--lg-borderRadius: 5px;
+
+@button--xl-fontSize: @base-fontSize--xl;
+@button--xl-borderRadius: 4px;
+
+// -------------------- Core LEGO --------------------
+.Button {
+	.Button();
+	.buttonVariant(@button-color, @button-backgroundColor, @button-borderColor);
+}
+
+// -------------------- Descendants --------------------
+.Button-icon {
+	.Button-icon();
+}
+
+// -------------------- Modifiers --------------------
+.Button--link {
+	.Button--link();
+}
+
+// -------------------- States --------------------
+.Button {
+	&.is-disabled {
+		.Button-is-disabled();
+	}
+
+	&.is-active {
+		.Button-is-active(@button-backgroundColor);
+	}
+
+	&.is-focus {
+		.Button-is-focus();
+	}
+}
+
+// -------------------- Type modifiers --------------------
+.Button--primary   { .buttonVariant(@button--primary-color, @button--primary-backgroundColor, @button--primary-borderColor); }
+.Button--secondary { .buttonVariant(@button--secondary-color, @button--secondary-backgroundColor, @button--secondary-borderColor); }
+.Button--success   { .buttonVariant(@button--success-color, @button--success-backgroundColor, @button--success-borderColor); }
+.Button--warning   { .buttonVariant(@button--warning-color, @button--warning-backgroundColor, @button--warning-borderColor); }
+.Button--danger    { .buttonVariant(@button--danger-color, @button--danger-backgroundColor, @button--danger-borderColor); }
+
+// -------------------- Size modifiers --------------------
+.Button--xs {
+	.buttonSize(@button--xs-fontSize, @button--xs-borderRadius);
+}
+
+.Button--sm {
+	.buttonSize(@button--sm-fontSize, @button--sm-borderRadius);
+}
+
+.Button--md {
+	.buttonSize(@button--md-fontSize, @button--md-borderRadius);
+}
+
+.Button--lg {
+	.buttonSize(@button--lg-fontSize, @button--lg-borderRadius);
+}
+
+.Button--xl {
+	.buttonSize(@button--xl-fontSize, @button--xl-borderRadius);
+}
+
+// -------------------- Other modifiers --------------------
+// Button with icon inside, the icon is the button, no other styles should be here
+.Button--icon {
+	.Button--icon();
+}
+
+// Button layout modifiers
+.Button--block {
+	.Button--block();
+}

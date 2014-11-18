@@ -1,0 +1,91 @@
+/********************************************
+	Heading
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+
+// TODO: Refactor variable names according to naming convention
+@headingOne-fontSize: 24px;
+@headingTwo-fontSize: 22px;
+@headingThree-fontSize: 20px;
+@headingFour-fontSize: 18px;
+@headingFive-fontSize: 16px;
+@headingSix-fontSize: 14px;
+
+// Custom
+@heading--xl-fontSize: 30px;
+@heading--seven-fontSize: 13px;
+@heading--eight-fontSize: 12px;
+
+// -------------------- Core LEGO --------------------
+.Heading {
+	.Heading();
+}
+
+// -------------------- Descendants --------------------
+
+
+// -------------------- States --------------------
+
+
+// -------------------- Modifiers --------------------
+.Heading--one {
+	.Heading--one();
+}
+
+.Heading--two {
+	.Heading--two();
+}
+
+.Heading--three {
+	.Heading--three();
+}
+
+.Heading--four {
+	.Heading--four();
+}
+
+.Heading--five {
+	.Heading--five();
+}
+
+.Heading--six {
+	.Heading--six();
+}
+
+// -------------------- Custom modifiers --------------------
+.Heading--xl {
+	font-size: @heading--xl-fontSize;
+	.lineHeight-calculated(@heading--xl-fontSize);
+}
+
+.Heading--seven {
+	font-size: @heading--seven-fontSize;
+	.lineHeight-calculated(@heading--seven-fontSize);
+}
+
+.Heading--eight {
+	font-size: @heading--eight-fontSize;
+	.lineHeight-calculated(@heading--eight-fontSize);
+}
+
+.Heading--light {
+	font-weight: 400;
+}
+
+// Custom
+.Heading--section {
+	.Heading--one();
+	color: @brandPrimary;
+	border-bottom: 6px solid red;
+	.line-height(8);
+}

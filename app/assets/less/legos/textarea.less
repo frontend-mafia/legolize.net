@@ -1,0 +1,47 @@
+/********************************************
+	Textarea
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+
+@textarea-default-borderColor: #dedede;
+@textarea-default-fontColor: #585858;
+
+@textarea-success-borderColor: #57a62f;
+@textarea-success-fontColor: #57a62f;
+
+@textarea-warning-borderColor: #ffae00;
+@textarea-warning-fontColor: #ffae00;
+
+@textarea--danger-borderColor: #d42020;
+@textarea--danger-fontColor: #d42020;
+
+// -------------------- Core LEGO --------------------
+.Textarea {
+	.Textarea();
+
+	.margin-top(1);
+	.margin-bottom(1);
+}
+
+// -------------------- Modifiers --------------------
+.Textarea--success {
+	.textareaVariant(@textarea-success-borderColor, @textarea-success-fontColor);
+}
+
+.Textarea--warning {
+	.textareaVariant(@textarea-warning-borderColor, @textarea-warning-fontColor);
+}
+
+.Textarea--danger {
+	.textareaVariant(@textarea--danger-borderColor, @textarea--danger-fontColor);
+}

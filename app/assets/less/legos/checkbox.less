@@ -1,0 +1,84 @@
+/********************************************
+	Label
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+//<button class="Button Button--myButton"></button>
+
+// -------------------- Variables --------------------
+@checkbox--disabled-color: #aaa;
+@checkbox--primary-color: #06a3d5;
+@checkbox--success-color: #57A62F;
+@checkbox--warning-color: #ffae00;
+@checkbox--danger-color: #D42020;
+
+
+// -------------------- Core LEGO --------------------
+.Checkbox {
+	.Checkbox();
+
+}
+
+// ------------------- Descendants -------------------
+.Checkbox-icon {
+	.Checkbox-icon();
+}
+
+.Checkbox-input {
+	.Checkbox-input();
+}
+
+// ------------------- Modifiers --------------------
+.Checkbox--inline {
+	display: inline-block;
+}
+
+.Checkbox-icon--primary {
+	.checkboxIconVariant(@checkbox--primary-color)
+}
+
+.Checkbox-icon--success {
+	.checkboxIconVariant(@checkbox--success-color)
+}
+
+.Checkbox-icon--warning {
+	.checkboxIconVariant(@checkbox--warning-color)
+}
+
+.Checkbox-icon--danger {
+	.checkboxIconVariant(@checkbox--danger-color)
+}
+
+.Checkbox--xs {
+	font-size: 0.75em;
+}
+
+.Checkbox--sm {
+	font-size: 0.75em;
+}
+
+.Checkbox--lg {
+	font-size: 0.75em;
+}
+
+.Checkbox--xl {
+	font-size: 0.75em;
+}
+
+// -------------------- States --------------------
+.Checkbox.is-disabled {
+	color: @checkbox--disabled-color;
+	cursor: not-allowed;
+
+	.Checkbox-icon {
+		.checkboxIconVariant(@checkbox--disabled-color);
+	}
+}

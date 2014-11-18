@@ -1,0 +1,77 @@
+/********************************************
+	Media
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+
+// --- Default modifier ---
+@media-margin: 0;
+
+// --- Modifier variables ---
+@media-object--left-margin: 0px 10px 0px 0px;
+@media-object--right-margin: 0px 0px 0px 10px;
+
+@media--xs-size: 16px;
+@media--sm-size: 32px;
+@media--default-size: 64px;
+@media--lg-size: 96px;
+@media--xl-size: 192px;
+
+
+// -------------------- Core LEGO --------------------
+.Media {
+	.Media();
+}
+// -------------------- Descendants --------------------
+.Media-object {
+	.Media-object();
+	//.mediaSizeVariant(@media--default-size);
+}
+
+.Media-body {
+	.Media-body();
+	.line-height(3);
+}
+
+// -------------------- Modifiers --------------------
+
+//Media layout variants
+.Media-object--left {
+	margin: @media-object--left-margin;
+	float: left;
+}
+
+.Media-object--right {
+	margin: @media-object--right-margin;
+	float: right;
+}
+
+.Media-object--round {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+//Media size variants
+.Media-object--xs {
+	.mediaSizeVariant(@media--xs-size);
+}
+
+.Media-object--sm {
+	.mediaSizeVariant(@media--sm-size);
+}
+
+.Media-object--lg {
+	.mediaSizeVariant(@media--lg-size);
+}
+
+.Media-object--xl {
+	.mediaSizeVariant(@media--xl-size);
+}

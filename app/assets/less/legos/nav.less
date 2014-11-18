@@ -1,0 +1,159 @@
+/********************************************
+	Nav
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+// ------------ Nav--menu variables --------------------
+@nav--menu-background: #06a3d5;
+//@nav--menu-border: none;
+@nav--menu-borderRadius: 5px;
+
+//// Item
+//@nav--menu-item-background: none;
+//@nav--menu-item-border: none;
+
+////menu link hover
+@nav--menu-item-hover-background: @brandWarning;
+//@nav--menu-item-hover-border: none;
+
+//// Link
+@nav--menu-link-color: #ffffff;
+@nav--menu-link-fontSize: 15px;
+//@nav--menu-link-fontWeight: bold;
+@nav--menu-link-padding: 0 12px;
+@nav--menu-link-height: 40px;
+//@nav--menu-link-lineHeight: @nav--menu-link-height;
+
+//// Link hover
+//@nav--menu-link-hover-color: @nav--menu-link-color;
+
+
+// Tmp until Legolize fixes this
+@nav--menu-link-lineHeight: @nav--menu-link-height;
+
+@nav-item-active-link-color: #ff9600;
+@nav-link-hover-color: #ff9600;
+
+// -------------------- Core LEGO --------------------
+.Nav {
+	.Nav();
+}
+
+// -------------------- Descendants --------------------
+.Nav-item {
+	.Nav-item();
+}
+
+.Nav-link {
+	.Nav-link();
+}
+
+// -------------------- Modifiers --------------------
+.Nav--menu {
+	.Nav--menu();
+
+	.Nav-link {
+		.Nav-link();
+		border-bottom: 3px solid transparent;
+
+		&:hover {
+			border-bottom: 3px solid @nav-link-hover-color;
+		}
+	}
+
+	// -------------------- States --------------------
+	.Nav-item {
+		&.is-active {
+			.Nav-link {
+				border-bottom: 3px solid @nav-item-active-link-color;
+			}
+		}
+	}
+
+	@media @base-screen-lg {
+		.borderRadius(0);
+
+		.Nav-item {
+			
+			.Nav-link {
+				font-size: 14px;
+			}
+
+			&:first-child {
+				.borderRadius(0);
+				.Nav-link {
+					.padding-left(@grid-margin / 2);
+				}
+			}
+
+			&:last-child {
+				.borderRadius(0);
+
+				.Nav-link {
+					.padding-right(@grid-margin / 2);
+
+					span {
+						display: none;
+					}
+				}
+			}
+
+			//TODO: remove this when Life goals is done
+			&:nth-child(5) {
+				display: none;
+			}
+		}
+	}
+
+	@media @base-screen-md {
+		.Nav-item {
+			width: 100%;
+			display: block;
+			float: none;
+
+			&:last-child {
+				float: none;
+
+				.Nav-link {
+					span {
+						display: block;
+					}
+				}
+			}
+
+			.Nav-link { 
+				.padding-right(6px);
+				.padding-left(@grid-margin);
+
+				.Icon {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.Nav--vertical {
+	.Nav--vertical();
+}
+
+.Nav--tabs {
+	.Nav--tabs();
+}
+
+.Nav--justified {
+	.Nav--justified();
+}
+
+.Nav--pills {
+	.Nav--pills();
+}

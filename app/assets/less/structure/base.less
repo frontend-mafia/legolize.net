@@ -1,0 +1,28 @@
+/********************************************
+	Base styles
+********************************************/
+// Includes normalize.css and baseline system in Legolize
+
+// Normalize
+.normalizeInit();
+// Normalize baseline grid system
+.baselineInit();
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background: @base-backgroundColor;
+	font-family: @base-fontFamily;
+	font-size: @base-fontSize;
+	color: @base-color;
+	.line-height(@base-lineHeight);
+
+	& * {
+		box-sizing: border-box;
+	}
+}

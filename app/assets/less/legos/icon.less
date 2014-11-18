@@ -1,0 +1,1619 @@
+/********************************************
+	Icon
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+@icon--primary: #06a3d5;
+@icon--secondary: #585858;
+@icon--success: #57a62f;
+@icon--warning: #ffae00;
+@icon--danger: #d42020;
+@icon-fontFamily: "Menicon";
+
+//This path should point to the font files excluding the file extensions,
+//i.e. if the font files are called Menicon.eot, Menicon.svg etc, then the path should be like this:
+@icon-fontPath: "/assets/themes/meniga-legolize/fonts/MenIcon/fonts/Menicon";
+
+// -------------------- Core LEGO --------------------
+.Icon {
+	.Icon();
+	.iconFontFamilyVariant(@icon-fontFamily);
+
+	&:before {
+		position: relative;
+	}
+}
+
+
+@font-face {
+	.includeMeniconFontFace();
+}
+
+// -------------------- Modifiers --------------------
+
+//custom
+.Icon--only {
+	text-indent: -9999em;
+}
+
+//custom colors
+.Icon--meniga {
+	color: @icon--primary;
+}
+
+.Icon--visa {
+	color: #00219e;
+}
+
+.Icon--euro {
+	color: #f03727;
+}
+
+.Icon--islandsbanki {
+	color: #ba102c;
+}
+
+.Icon--landsbankinn {
+	color: #e71221;
+}
+
+.Icon--arion {
+	color: #166ab2;
+}
+
+//Icon color modifiers
+.Icon--primary {
+	color: @icon--primary;
+}
+.Icon--secondary {
+	color: @icon--secondary;
+}
+.Icon--success {
+	color: @icon--success;
+}
+.Icon--warning {
+	color: @icon--warning;
+}
+.Icon--danger {
+	color: @icon--danger;
+}
+
+//Icon size modifiers
+.Icon--xs {
+	font-size: 1em;
+	line-height: normal;
+}
+
+.Icon--sm {
+	font-size: 1.5em;
+	line-height: normal;
+}
+
+.Icon--lg {
+	font-size: 2.5em;
+	line-height: normal;
+}
+
+.Icon--xl {
+	font-size: 4em;
+	line-height: normal;
+}
+
+//Icon layout modifiers
+.Icon--left {
+	margin-right: 4px;
+	float: left;
+}
+
+.Icon--right {
+	margin-left: 4px;
+	float: right;
+}
+
+// Icon border modifiers
+.Icon--border-square {
+	border: 1px solid #d8d8d8;
+	border-radius: 2px;
+	display: block;
+	float: left;
+	text-indent: 0px;
+	line-height: 12px;
+	margin: 0px 5px 0 0;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+}
+
+.Icon--border-round {
+	.Icon--border-square;
+	border-radius: 50%;
+}
+
+.Icon--border-rect {
+	border: 1px solid #d8d8d8;
+	border-radius: 2px;
+	display: block;
+	float: left;
+	text-indent: 0px;
+	line-height: 12px;
+	margin: 0 5px 0 0;
+	width: 30px;
+	height: 18px;
+	padding: 4px 0;
+	text-align: center;
+}
+
+// ------------------------ Mixins ------------------------
+.iconVariant(@content) {
+	&:before { content: @content; }
+}
+
+// ------------------ Custom icons --------------------
+
+//ToDo: should be created as glyphs inside font
+.Icon--threeCols {
+	width: 18px;
+	height: 16px;
+	border-left: 4px solid;
+	border-right: 4px solid;
+	top: -2px;
+	left: -4px;
+
+	&:before {
+		position: absolute;
+		content: " ";
+		width: 0px;
+		height: 16px;
+		top: 0;
+		left: 3px;
+		border-left: 4px solid;
+		border-color: inherit;
+	}
+}
+
+.Icon--fourCols {
+	width: 18px;
+	height: 16px;
+	border-left: 3px solid;
+	border-right: 3px solid;
+	top: -2px;
+	left: -3px;
+
+	&:before {
+		position: absolute;
+		content: " ";
+		width: 2px;
+		height: 16px;
+		top: 0;
+		left: 2px;
+		border-left: 3px solid;
+		border-right: 3px solid;
+	}
+}
+
+// --------------- Font positioning fixes -----------------
+//Fix some icon positioning problems
+.Icon--caret-up:before 		{ top: -2px; }
+.Icon--caret-down:before 	{ top: -1px; }
+.Icon--plus-square:before  	{ top: -6px; }
+.Icon--minus-square:before 	{ top: -6px; }
+.Icon--settings:before  	{ top:  4px; }
+.Icon--chat:before  		{ top: -5px; }
+//.Icon--plus:before 			{ top: -6px; }
+.Icon--cancel:before 		{ top: -3px; }
+.Icon--wallet:before 		{ top: -4px; }
+.Icon--flat:before 			{ top: -4px; }
+.Icon--flag:before 			{ top: -5px; }
+.Icon--price-tag:before 	{ top: -5px; }
+
+// -------------------- Type modifiers --------------------
+.Icon--caret-left				{ .iconVariant("\e602"); }
+.Icon--caret-right 				{ .iconVariant("\e603"); }
+.Icon--caret-up 				{ .iconVariant("\e604"); }
+.Icon--caret-down				{ .iconVariant("\e605"); }
+.Icon--angle-left 				{ .iconVariant("\e639"); }
+.Icon--angle-right 				{ .iconVariant("\e63A"); }
+.Icon--angle-up 				{ .iconVariant("\e637"); }
+.Icon--angle-down				{ .iconVariant("\e638"); }
+.Icon--caret-bottom-up			{ .iconVariant("\e63B"); }
+.Icon--caret-bottom-down		{ .iconVariant("\e63C"); }
+.Icon--caret-bottom-left 		{ .iconVariant("\e63D"); }
+.Icon--caret-bottom-right		{ .iconVariant("\e63E"); }
+.Icon--caret-circle-up			{ .iconVariant("\e63F"); }
+.Icon--caret-circle-down		{ .iconVariant("\e640"); }
+.Icon--caret-circle-left 		{ .iconVariant("\e641"); }
+.Icon--caret-circle-right		{ .iconVariant("\e642"); }
+.Icon--caret-circle-up-f		{ .iconVariant("\e643"); }
+.Icon--caret-circle-down-f		{ .iconVariant("\e644"); }
+.Icon--caret-circle-left-f		{ .iconVariant("\e645"); }
+.Icon--caret-circle-right-f		{ .iconVariant("\e645"); }
+.Icon--caret-double-left		{ .iconVariant("\e661"); }
+.Icon--caret-double-right		{ .iconVariant("\e662"); }
+.Icon--top-left-arc 			{ .iconVariant("\e605"); }
+.Icon--top-right-arc 			{ .iconVariant("\e606"); }
+.Icon--bottom-left-arc 			{ .iconVariant("\e607"); }
+.Icon--bottom-right-arc 		{ .iconVariant("\e608"); }
+.Icon--round-arrow-up 			{ .iconVariant("\e60A"); }
+.Icon--round-arrow-down 		{ .iconVariant("\e60B"); }
+.Icon--top-left-corner 			{ .iconVariant("\e60C"); }
+.Icon--top-right-corner 		{ .iconVariant("\e60D"); }
+.Icon--bottom-left-corner 		{ .iconVariant("\e60E"); }
+.Icon--bottom-right-corner 		{ .iconVariant("\e60F"); }
+.Icon--settings 				{ .iconVariant("\e647"); }
+.Icon--settings-plus			{ .iconVariant("\e610"); }
+.Icon--refresh					{ .iconVariant("\e649"); }
+.Icon--split					{ .iconVariant("\e651"); }
+.Icon--info	 					{ .iconVariant("\e61F"); }
+.Icon--info-circle				{ .iconVariant("\e61E"); }
+.Icon--info-circle-f			{ .iconVariant("\e61C"); }
+.Icon--info-circle-b			{ .iconVariant("\e677"); }
+.Icon--warning-triangle			{ .iconVariant("\e67C"); }
+.Icon--danger-circle			{ .iconVariant("\e611"); }
+.Icon--wallet 					{ .iconVariant("\e613"); }
+.Icon--star 					{ .iconVariant("\e678"); }
+.Icon--pen 						{ .iconVariant("\e669"); }
+.Icon--pie 						{ .iconVariant("\e66C"); }
+.Icon--bars-horizontal			{ .iconVariant("\e66E"); }
+.Icon--bars-vertical			{ .iconVariant("\e66F"); }
+.Icon--bars-stacked				{ .iconVariant("\e66D"); }
+.Icon--chart-lines				{ .iconVariant("\e676"); }
+.Icon--chart-board				{ .iconVariant("\e656"); }
+.Icon--chart-arrows				{ .iconVariant("\e655"); }
+.Icon--flag 					{ .iconVariant("\e618"); }
+.Icon--cancel 					{ .iconVariant("\e634"); }
+.Icon--chat 					{ .iconVariant("\e61D"); }
+.Icon--coffee-cup				{ .iconVariant("\e64E"); }
+.Icon--magnify-glass			{ .iconVariant("\e648"); }
+.Icon--gift 					{ .iconVariant("\e64B"); }
+.Icon--price-tag 				{ .iconVariant("\e626"); }
+.Icon--clover 					{ .iconVariant("\e66A"); }
+.Icon--plane 					{ .iconVariant("\e660"); }
+.Icon--calendar					{ .iconVariant("\e657"); }
+.Icon--calendar-full			{ .iconVariant("\e653"); }
+.Icon--new-file					{ .iconVariant("\e654"); }
+.Icon--folder					{ .iconVariant("\e652"); }
+.Icon--picture					{ .iconVariant("\e658"); }
+.Icon--ring-buoy				{ .iconVariant("\e659"); }
+.Icon--graduation-cap			{ .iconVariant("\e65A"); }
+.Icon--car-money				{ .iconVariant("\e65B"); }
+.Icon--house-money				{ .iconVariant("\e65C"); }
+.Icon--balloons					{ .iconVariant("\e65D"); }
+.Icon--hammer 					{ .iconVariant("\e65E"); }
+.Icon--globe 					{ .iconVariant("\e679"); }
+.Icon--trash 					{ .iconVariant("\e614"); }
+.Icon--ok-thick					{ .iconVariant("\e62C"); }
+.Icon--ok-thin					{ .iconVariant("\e62D"); }
+.Icon--plus-circle				{ .iconVariant("\e671"); }
+.Icon--check-square				{ .iconVariant("\e62E"); }
+.Icon--check-thick				{ .iconVariant("\e62F"); }
+.Icon--radio				    { .iconVariant("\e631"); }
+.Icon--radio-checked			{ .iconVariant("\e632"); }
+.Icon--check-thin				{ .iconVariant("\e630"); }
+.Icon--plus 					{ .iconVariant("\e621"); }
+.Icon--plus-circle				{ .iconVariant("\e671"); }
+.Icon--plus-square				{ .iconVariant("\e624"); }
+.Icon--plus-square-f			{ .iconVariant("\e617"); }
+.Icon--minus 					{ .iconVariant("\e616"); }
+.Icon--minus-circle 			{ .iconVariant("\e673"); }
+.Icon--minus-square 			{ .iconVariant("\e625"); }
+.Icon--minus-square-f			{ .iconVariant("\e623"); }
+.Icon--times 					{ .iconVariant("\e622"); }
+.Icon--divide 					{ .iconVariant("\e615"); }
+.Icon--emoticon-smile 			{ .iconVariant("\e663"); }
+.Icon--emoticon-sad 			{ .iconVariant("\e664"); }
+.Icon--emoticon-surprised 		{ .iconVariant("\e665"); }
+.Icon--emoticon-happy 			{ .iconVariant("\e666"); }
+.Icon--mp 						{ .iconVariant("\e67F"); }
+.Icon--amex 					{ .iconVariant("\e67B"); }
+.Icon--islandsbanki 			{ .iconVariant("\e66b"); }
+.Icon--facebook					{ .iconVariant("\e680"); }
+.Icon--visa 					{ .iconVariant("\e612"); }
+.Icon--master-card				{ .iconVariant("\e674"); }
+.Icon--meniga					{ .iconVariant("\e67D"); }
+
+
+// ----- New Meniga font -----
+// Temporary solution, these icons all extend from the new Menicon font
+// until everything will be combined into one font
+
+
+@font-face {
+	.includeMeniconFontFace("menicon2", "/assets/themes/meniga-legolize/fonts/menicon2/menicon2");
+}
+
+.Icon--home,
+.Icon--homeRoundNeg,
+.Icon--car,
+.Icon--carRoundNeg,
+.Icon--monitor,
+.Icon--monitorRoundNeg,
+.Icon--directionSign,
+.Icon--directionSignRoundNeg,
+.Icon--bank,
+.Icon--bankRoundNeg,
+.Icon--phone,
+.Icon--phoneRoundNeg,
+.Icon--airplaneTakeOff,
+.Icon--airplaneTakeOffRoundNeg,
+.Icon--smileyGlad,
+.Icon--smileyGladRoundNeg,
+.Icon--umbrella,
+.Icon--umbrellaRoundNeg,
+.Icon--babyWagon,
+.Icon--babyWagonRoundNeg,
+.Icon--calculator,
+.Icon--calculatorRoundNeg,
+.Icon--painting,
+.Icon--paintingRoundNeg,
+.Icon--bicycle,
+.Icon--bicycleRoundNeg,
+.Icon--horseshoe,
+.Icon--horseshoeRoundNeg,
+.Icon--mountains,
+.Icon--mountainsRoundNeg,
+.Icon--golf,
+.Icon--golfRoundNeg,
+.Icon--bones,
+.Icon--bonesRoundNeg,
+.Icon--football,
+.Icon--footballRoundNeg,
+.Icon--music,
+.Icon--musicRoundNeg,
+.Icon--camera,
+.Icon--cameraRoundNeg,
+.Icon--food,
+.Icon--foodRoundNeg,
+.Icon--shipWheel,
+.Icon--shipWheelRoundNeg,
+.Icon--martiniGlass,
+.Icon--martiniGlassRoundNeg,
+.Icon--shoppingCart,
+.Icon--shoppingCartRoundNeg,
+.Icon--snowflake,
+.Icon--snowflakeRoundNeg,
+.Icon--wrappedGift,
+.Icon--wrappedGiftRoundNeg,
+.Icon--dogbone,
+.Icon--dogboneRoundNeg,
+.Icon--comb,
+.Icon--combRoundNeg,
+.Icon--flowerpot,
+.Icon--flowerpotRoundNeg,
+.Icon--armchair,
+.Icon--armchairRoundNeg,
+.Icon--lightbulb,
+.Icon--lightbulbRoundNeg,
+.Icon--hammer,
+.Icon--hammerRoundNeg,
+.Icon--openBook,
+.Icon--openBookRoundNeg,
+.Icon--sweater,
+.Icon--sweaterRoundNeg,
+.Icon--summerhouse,
+.Icon--summerhouseRoundNeg,
+.Icon--diamond,
+.Icon--diamondRoundNeg,
+.Icon--stethoscope,
+.Icon--stethoscopeRoundNeg,
+.Icon--handweight,
+.Icon--handweightRoundNeg,
+.Icon--balloon,
+.Icon--balloonRoundNeg,
+.Icon--lego,
+.Icon--legoRoundNeg
+{
+	&:before {
+		font-family: "menicon2";
+	}
+}
+
+.Icon--bubbleDownLeft {
+	.iconVariant("\e601");
+}
+.Icon--bubbleDownRight {
+	.iconVariant("\e600");
+}
+.Icon--bubbleUpLeft {
+	.iconVariant("\e615");
+}
+.Icon--bubbleUpRight {
+	.iconVariant("\e616");
+}
+.Icon--cornerBorderLowerLeft {
+	.iconVariant("\e620");
+}
+.Icon--cornerBorderLowerRight {
+	.iconVariant("\e621");
+}
+.Icon--cornerBorderUpperLeft {
+	.iconVariant("\e606");
+}
+.Icon--cornerBorderUpperRight {
+	.iconVariant("\e687");
+}
+.Icon--cornerLowerLeft {
+	.iconVariant("\e60e");
+}
+.Icon--cornerLowerRight {
+	.iconVariant("\e60f");
+}
+.Icon--cornerUpperLeft {
+	.iconVariant("\e60c");
+}
+.Icon--cornerUpperRight {
+	.iconVariant("\e60d");
+}
+.Icon--arrowFullLargeLeft {
+	.iconVariant("\e63d");
+}
+.Icon--arrowFullLargeRight {
+	.iconVariant("\e63e");
+}
+.Icon--arrowFullLargeDown {
+	.iconVariant("\e63c");
+}
+.Icon--arrowFullLargeUp {
+	.iconVariant("\e63b");
+}
+.Icon--arrowFullLeft {
+	.iconVariant("\e602");
+}
+.Icon--arrowFullRight {
+	.iconVariant("\e603");
+}
+.Icon--arrowFullDown {
+	.iconVariant("\e605");
+}
+.Icon--arrowFullUp {
+	.iconVariant("\e604");
+}
+.Icon--arrowSoftLeft {
+	.iconVariant("\e688");
+}
+.Icon--arrowsoftright {
+	.iconVariant("\e6a0");
+}
+.Icon--arrowsoftdown {
+	.iconVariant("\e6ab");
+}
+.Icon--arrowSoftUp {
+	.iconVariant("\e6ad");
+}
+.Icon--arrowleft {
+	.iconVariant("\e684");
+}
+.Icon--arrowright {
+	.iconVariant("\e6a3");
+}
+.Icon--arrowdown {
+	.iconVariant("\e6b9");
+}
+.Icon--arrowup {
+	.iconVariant("\e6c6");
+}
+.Icon--arrowhardleft {
+	.iconVariant("\e639");
+}
+.Icon--arrowhardright {
+	.iconVariant("\e63a");
+}
+.Icon--arrowharddown {
+	.iconVariant("\e6cd");
+}
+.Icon--arrowhardup {
+	.iconVariant("\e789");
+}
+.Icon--arrowrightthin {
+	.iconVariant("\e68a");
+}
+.Icon--arrowleftthin {
+	.iconVariant("\e68b");
+}
+.Icon--arrowdownthin {
+	.iconVariant("\e6d3");
+}
+.Icon--arrowupthin {
+	.iconVariant("\e6e3");
+}
+.Icon--arrowroundnegleft {
+	.iconVariant("\e645");
+}
+.Icon--arrowroundnegright {
+	.iconVariant("\e646");
+}
+.Icon--arrowroundnegdown {
+	.iconVariant("\e644");
+}
+.Icon--arrowroundnegup {
+	.iconVariant("\e643");
+}
+.Icon--arrowroundstrokeleft {
+	.iconVariant("\e641");
+}
+.Icon--arrowroundstrokeright {
+	.iconVariant("\e642");
+}
+.Icon--arrowroundstrokedown {
+	.iconVariant("\e640");
+}
+.Icon--arrowroundstrokeup {
+	.iconVariant("\e63f");
+}
+.Icon--arrowhardnegdown {
+	.iconVariant("\e6ea");
+}
+.Icon--arrowhardnegup {
+	.iconVariant("\e6f8");
+}
+.Icon--arrowhardnegleft {
+	.iconVariant("\e6f9");
+}
+.Icon--arrowhardnegright {
+	.iconVariant("\e706");
+}
+.Icon--arrowhardstrokedown {
+	.iconVariant("\e707");
+}
+.Icon--arrowHardStrokeUp {
+	.iconVariant("\e708");
+}
+.Icon--arrowHardStrokeLeft {
+	.iconVariant("\e709");
+}
+.Icon--arrowHardStrokeRight {
+	.iconVariant("\e70a");
+}
+.Icon--arrowSoftNegDown {
+	.iconVariant("\e629");
+}
+.Icon--arrowSoftNegUp {
+	.iconVariant("\e62b");
+}
+.Icon--arrowsoftnegleft {
+	.iconVariant("\e70b");
+}
+.Icon--arrowsoftnegright {
+	.iconVariant("\e70c");
+}
+.Icon--arrowSoftStrokeLeft {
+	.iconVariant("\e70d");
+}
+.Icon--arrowSoftStrokeRight {
+	.iconVariant("\e70e");
+}
+.Icon--arrowSoftStrokeDown {
+	.iconVariant("\e628");
+}
+.Icon--arrowSoftStrokeUp {
+	.iconVariant("\e62a");
+}
+.Icon--arrowdoubleleft {
+	.iconVariant("\e661");
+}
+.Icon--arrowdoubleright {
+	.iconVariant("\e662");
+}
+.Icon--handLeftRight {
+	.iconVariant("\e6a7");
+}
+.Icon--handRightLeft {
+	.iconVariant("\e6a8");
+}
+.Icon--expand {
+	.iconVariant("\e69d");
+}
+.Icon--collapse {
+	.iconVariant("\e6b4");
+}
+.Icon--moreellipsis {
+	.iconVariant("\e6b6");
+}
+.Icon--refine {
+	.iconVariant("\e6bf");
+}
+.Icon--logout {
+	.iconVariant("\e613");
+}
+.Icon--circleopen {
+	.iconVariant("\e619");
+}
+.Icon--logoutarrowright {
+	.iconVariant("\e699");
+}
+.Icon--checkboxhard {
+	.iconVariant("\e62e");
+}
+.Icon--checkboxthinhard {
+	.iconVariant("\e6d1");
+}
+.Icon--checkboxsoftopen {
+	.iconVariant("\e733");
+}
+.Icon--checkboxcheckedsoft {
+	.iconVariant("\e62f");
+}
+.Icon--checkboxcheckedcurvy {
+	.iconVariant("\e630");
+}
+.Icon--checkmarcksoft {
+	.iconVariant("\e62c");
+}
+.Icon--checkmarkcurvy {
+	.iconVariant("\e62d");
+}
+.Icon--checkmark {
+	.iconVariant("\e78a");
+}
+.Icon--checkmarksmallsoft {
+	.iconVariant("\e78b");
+}
+.Icon--radiothickoff {
+	.iconVariant("\e631");
+}
+.Icon--radiooff {
+	.iconVariant("\e6bd");
+}
+.Icon--radiothickon {
+	.iconVariant("\e632");
+}
+.Icon--radioon {
+	.iconVariant("\e6be");
+}
+.Icon--radioinner {
+	.iconVariant("\e633");
+}
+.Icon--plus {
+	.iconVariant("\e635");
+}
+.Icon--plushardneg {
+	.iconVariant("\e670");
+}
+.Icon--plushardneg2 {
+	.iconVariant("\e78c");
+}
+.Icon--plussoftneg {
+	.iconVariant("\e617");
+}
+.Icon--plusroundneg {
+	.iconVariant("\e671");
+}
+
+// Plus thin
+.Icon--plusThin {
+	.iconVariant("\e799");
+}
+// Plus thin round
+.Icon--plusThinRoundStroke {
+	.iconVariant("\e79c");
+}
+// Plus thin round negative
+.Icon--plusThinRoundNeg {
+	.iconVariant("\e79a");
+}
+
+.Icon--plusthinroundstroke-copy {
+	.iconVariant("\e79b");
+}
+.Icon--plushardstroke {
+	.iconVariant("\e78d");
+}
+.Icon--plussoftstroke {
+	.iconVariant("\e624");
+}
+// Minus thin
+.Icon--minusThin {
+	.iconVariant("\e79d");
+}
+.Icon--minusThinRoundNeg {
+	.iconVariant("\e79e");
+}
+
+.Icon--minushardneg2 {
+	.iconVariant("\e672");
+}
+.Icon--minushardneg {
+	.iconVariant("\e78e");
+}
+.Icon--minussoftneg {
+	.iconVariant("\e623");
+}
+.Icon--minusroundneg {
+	.iconVariant("\e673");
+}
+.Icon--minushardstroke {
+	.iconVariant("\e78f");
+}
+.Icon--minussoftstroke {
+	.iconVariant("\e625");
+}
+.Icon--minusthinroundstroke {
+	.iconVariant("\e79f");
+}
+.Icon--closesoftlarge {
+	.iconVariant("\e6ce");
+}
+.Icon--closehardlarge {
+	.iconVariant("\e69a");
+}
+.Icon--closehardsmall {
+	.iconVariant("\e622");
+}
+.Icon--closesoftroundneg {
+	.iconVariant("\e634");
+}
+.Icon--closehardroundneg {
+	.iconVariant("\e6d2");
+}
+.Icon--help {
+	.iconVariant("\e6ca");
+}
+.Icon--helproundstroke {
+	.iconVariant("\e61a");
+}
+.Icon--helproundneg {
+	.iconVariant("\e61b");
+}
+.Icon--info {
+	.iconVariant("\e61f");
+}
+.Icon--informationroundstroke {
+	.iconVariant("\e61e");
+}
+.Icon--informationroundneg {
+	.iconVariant("\e61c");
+}
+.Icon--informationplainroundneg {
+	.iconVariant("\e677");
+}
+.Icon--alertroundneg {
+	.iconVariant("\e611");
+}
+.Icon--alertsoft {
+	.iconVariant("\e790");
+}
+.Icon--alerttriangleneg {
+	.iconVariant("\e67c");
+}
+.Icon--cogwheel {
+	.iconVariant("\e647");
+}
+.Icon--cogwheelnarrow {
+	.iconVariant("\e734");
+}
+.Icon--addrule {
+	.iconVariant("\e610");
+}
+.Icon--refresh {
+	.iconVariant("\e649");
+}
+.Icon--refreshlower {
+	.iconVariant("\e60a");
+}
+.Icon--refreshupper {
+	.iconVariant("\e60b");
+}
+.Icon--calendar {
+	.iconVariant("\e64a");
+}
+.Icon--calendar2 {
+	.iconVariant("\e653");
+}
+.Icon--calendarempty {
+	.iconVariant("\e657");
+}
+.Icon--calendarnumber {
+	.iconVariant("\e791");
+}
+.Icon--trash {
+	.iconVariant("\e614");
+}
+.Icon--globe {
+	.iconVariant("\e679");
+}
+.Icon--pencil {
+	.iconVariant("\e669");
+}
+.Icon--user {
+	.iconVariant("\e792");
+}
+.Icon--search {
+	.iconVariant("\e6c3");
+}
+.Icon--search2 {
+	.iconVariant("\e648");
+}
+.Icon--flagged {
+	.iconVariant("\e618");
+}
+.Icon--flageuro {
+	.iconVariant("\e793");
+}
+.Icon--tag {
+	.iconVariant("\e626");
+}
+.Icon--tags {
+	.iconVariant("\e609");
+}
+.Icon--tageuro {
+	.iconVariant("\e794");
+}
+.Icon--folder {
+	.iconVariant("\e652");
+}
+.Icon--accounts {
+	.iconVariant("\e607");
+}
+.Icon--split {
+	.iconVariant("\e651");
+}
+.Icon--spliteuro {
+	.iconVariant("\e795");
+}
+.Icon--splittransaction {
+	.iconVariant("\e796");
+}
+.Icon--comment {
+	.iconVariant("\e61d");
+}
+.Icon--commenteuro {
+	.iconVariant("\e797");
+}
+.Icon--customrule {
+	.iconVariant("\e654");
+}
+.Icon--budgetmeterroundneg {
+	.iconVariant("\e689");
+}
+.Icon--advice {
+	.iconVariant("\e798");
+}
+.Icon--gifts {
+	.iconVariant("\e64b");
+}
+.Icon--basket {
+	.iconVariant("\e64c");
+}
+.Icon--coffee {
+	.iconVariant("\e64e");
+}
+.Icon--steak {
+	.iconVariant("\e64f");
+}
+.Icon--apple {
+	.iconVariant("\e650");
+}
+.Icon--onlineshopping {
+	.iconVariant("\e64d");
+}
+.Icon--reportstotal {
+	.iconVariant("\e656");
+}
+.Icon--reportsovertime {
+	.iconVariant("\e655");
+}
+.Icon--chartpie {
+	.iconVariant("\e66c");
+}
+.Icon--chartbars {
+	.iconVariant("\e66e");
+}
+.Icon--chartline {
+	.iconVariant("\e676");
+}
+.Icon--chartstackedcolumns {
+	.iconVariant("\e66d");
+}
+.Icon--chartcolumns {
+	.iconVariant("\e66f");
+}
+.Icon--balloonsstring {
+	.iconVariant("\e65d");
+}
+.Icon--education {
+	.iconVariant("\e65a");
+}
+.Icon--sos {
+	.iconVariant("\e659");
+}
+.Icon--emergency-fund {
+	.iconVariant("\e7a0");
+}
+.Icon--improvement {
+	.iconVariant("\e65e");
+}
+.Icon--image {
+	.iconVariant("\e658");
+}
+.Icon--travel {
+	.iconVariant("\e660");
+}
+.Icon--cardownpayment {
+	.iconVariant("\e65b");
+}
+.Icon--other {
+	.iconVariant("\e65f");
+}
+.Icon--homedownpayment {
+	.iconVariant("\e65c");
+}
+.Icon--sliderhandlebarborder {
+	.iconVariant("\e668");
+}
+.Icon--sliderhandlebar {
+	.iconVariant("\e667");
+}
+.Icon--lockhardlocked {
+	.iconVariant("\e683");
+}
+.Icon--lockhardunlocked {
+	.iconVariant("\e682");
+}
+.Icon--locksoftlocked {
+	.iconVariant("\e681");
+}
+.Icon--locksoftunlocked {
+	.iconVariant("\e67e");
+}
+.Icon--smileyhappy {
+	.iconVariant("\e666");
+}
+.Icon--smileyglad {
+	.iconVariant("\e663");
+}
+.Icon--smileyneutral {
+	.iconVariant("\e665");
+}
+.Icon--smileysad {
+	.iconVariant("\e664");
+}
+.Icon--category {
+	.iconVariant("\e71a");
+}
+.Icon--eye {
+	.iconVariant("\e69c");
+}
+.Icon--money {
+	.iconVariant("\e6b5");
+}
+.Icon--cart {
+	.iconVariant("\e723");
+}
+.Icon--transportation {
+	.iconVariant("\e727");
+}
+.Icon--mail {
+	.iconVariant("\e728");
+}
+.Icon--computer {
+	.iconVariant("\e729");
+}
+.Icon--exclude {
+	.iconVariant("\e72e");
+}
+.Icon--circlefull {
+	.iconVariant("\e6cf");
+}
+.Icon--offersshield {
+	.iconVariant("\e780");
+}
+.Icon--alcohol {
+	.iconVariant("\e636");
+}
+.Icon--alcoholroundneg {
+	.iconVariant("\e6f2");
+}
+.Icon--painting {
+	.iconVariant("\e637");
+}
+.Icon--paintingRoundNeg {
+	.iconVariant("\e6fa");
+}
+.Icon--associations {
+	.iconVariant("\e638");
+}
+.Icon--associationsroundneg {
+	.iconVariant("\e703");
+}
+.Icon--bakery {
+	.iconVariant("\e685");
+}
+.Icon--bakeryroundneg {
+	.iconVariant("\e6f4");
+}
+.Icon--openBook {
+	.iconVariant("\e686");
+}
+.Icon--openBookRoundNeg {
+	.iconVariant("\e6fc");
+}
+.Icon--burger {
+	.iconVariant("\e68c");
+}
+.Icon--burgerroundneg {
+	.iconVariant("\e6e1");
+}
+.Icon--credit-card-payment-clean {
+	.iconVariant("\e7a1");
+}
+.Icon--credit-card-payment {
+	.iconVariant("\e7a2");
+}
+.Icon--calculator {
+	.iconVariant("\e696");
+}
+.Icon--home-cleaning-clean {
+	.iconVariant("\e7a3");
+}
+.Icon--home-cleaning {
+	.iconVariant("\e7a4");
+}
+.Icon--calculatorRoundNeg {
+	.iconVariant("\e6ee");
+}
+.Icon--candyicecreamkiosks {
+	.iconVariant("\e68e");
+}
+.Icon--candyicecreamkiosksroundneg {
+	.iconVariant("\e6ef");
+}
+.Icon--car {
+	.iconVariant("\e68f");
+}
+.Icon--carRoundNeg {
+	.iconVariant("\e6f0");
+}
+.Icon--charitiesanddonations {
+	.iconVariant("\e730");
+}
+.Icon--charitiesanddonationsroundneg {
+	.iconVariant("\e731");
+}
+.Icon--activity {
+	.iconVariant("\e627");
+}
+.Icon--activityroundneg {
+	.iconVariant("\e608");
+}
+.Icon--babyWagon {
+	.iconVariant("\e691");
+}
+.Icon--babyWagonRoundNeg {
+	.iconVariant("\e6e4");
+}
+.Icon--childs-hobbies-music-sport-clean {
+	.iconVariant("\e7a5");
+}
+.Icon--childs-hobbies-music-sport {
+	.iconVariant("\e7a6");
+}
+.Icon--lego {
+	.iconVariant("\e736");
+}
+.Icon--legoRoundNeg {
+	.iconVariant("\e737");
+}
+.Icon--clothing {
+	.iconVariant("\e692");
+}
+.Icon--clothingroundneg {
+	.iconVariant("\e6e5");
+}
+.Icon--bicycle {
+	.iconVariant("\e693");
+}
+.Icon--bicycleRoundNeg {
+	.iconVariant("\e705");
+}
+.Icon--dancing {
+	.iconVariant("\e694");
+}
+.Icon--dancingroundneg {
+	.iconVariant("\e6fe");
+}
+.Icon--stethoscope {
+	.iconVariant("\e738");
+}
+.Icon--stethoscopeRoundNeg {
+	.iconVariant("\e739");
+}
+.Icon--doctorsanddentists2 {
+	.iconVariant("\e73a");
+}
+.Icon--doctorsanddentists2roundneg {
+	.iconVariant("\e73b");
+}
+.Icon--sweater {
+	.iconVariant("\e695");
+}
+.Icon--sweaterRoundNeg {
+	.iconVariant("\e6d6");
+}
+.Icon--monitor {
+	.iconVariant("\e7a7");
+}
+.Icon--monitorRoundNeg {
+	.iconVariant("\e7a8");
+}
+.Icon--lightbulb {
+	.iconVariant("\e73c");
+}
+.Icon--lightbulbRoundNeg {
+	.iconVariant("\e73d");
+}
+.Icon--martiniGlass {
+	.iconVariant("\e698");
+}
+.Icon--martiniGlassRoundNeg {
+	.iconVariant("\e6d5");
+}
+.Icon--entertainmentnightlifetaxis {
+	.iconVariant("\e73e");
+}
+.Icon--entertainmentnightlifetaxisroundneg {
+	.iconVariant("\e6eb");
+}
+.Icon--bones {
+	.iconVariant("\e69b");
+}
+.Icon--bonesRoundNeg {
+	.iconVariant("\e6f3");
+}
+.Icon--eyesightandhearing {
+	.iconVariant("\e73f");
+}
+.Icon--eyesightandhearingroundneg {
+	.iconVariant("\e740");
+}
+.Icon--fastfood {
+	.iconVariant("\e69e");
+}
+.Icon--fastfoodroundneg {
+	.iconVariant("\e6ec");
+}
+.Icon--fast-food-clean {
+	.iconVariant("\e7a9");
+}
+.Icon--fast-food-copy {
+	.iconVariant("\e7aa");
+}
+.Icon--bank {
+	.iconVariant("\e69f");
+}
+.Icon--bankRoundNeg {
+	.iconVariant("\e741");
+}
+.Icon--flowerpot {
+	.iconVariant("\e7ab");
+}
+.Icon--flowerpotRoundNeg {
+	.iconVariant("\e7ac");
+}
+.Icon--food {
+	.iconVariant("\e6a1");
+}
+.Icon--foodRoundNeg {
+	.iconVariant("\e6e7");
+}
+.Icon--foodsupplimentsandvitamins {
+	.iconVariant("\e742");
+}
+.Icon--foodsupplimentsandvitaminsroundneg {
+	.iconVariant("\e743");
+}
+.Icon--football {
+	.iconVariant("\e6a2");
+}
+.Icon--footballRoundNeg {
+	.iconVariant("\e704");
+}
+.Icon--gasandfuel {
+	.iconVariant("\e744");
+}
+.Icon--gasandfuelroundneg {
+	.iconVariant("\e745");
+}
+.Icon--wrappedGift {
+	.iconVariant("\e6a4");
+}
+.Icon--wrappedGiftRoundNeg {
+	.iconVariant("\e746");
+}
+.Icon--golf {
+	.iconVariant("\e6a5");
+}
+.Icon--golfRoundNeg {
+	.iconVariant("\e6e8");
+}
+.Icon--shoppingCart {
+	.iconVariant("\e6a6");
+}
+.Icon--shoppingCartRoundNeg {
+	.iconVariant("\e6e0");
+}
+.Icon--handweight {
+	.iconVariant("\e747");
+}
+.Icon--handweightRoundNeg {
+	.iconVariant("\e748");
+}
+.Icon--comb {
+	.iconVariant("\e749");
+}
+.Icon--combRoundNeg {
+	.iconVariant("\e74a");
+}
+.Icon--healthbeauty {
+	.iconVariant("\e6a9");
+}
+.Icon--healthbeautyroundneg {
+	.iconVariant("\e6d9");
+}
+.Icon--health-beauty-clean {
+	.iconVariant("\e7bd");
+}
+.Icon--health-beauty-copy {
+	.iconVariant("\e7be");
+}
+.Icon--mountains {
+	.iconVariant("\e6aa");
+}
+.Icon--mountainsRoundNeg {
+	.iconVariant("\e6d0");
+}
+.Icon--hammer {
+	.iconVariant("\e74b");
+}
+.Icon--hotels-accomodation-clean {
+	.iconVariant("\e7ad");
+}
+.Icon--hammerRoundNeg {
+	.iconVariant("\e74c");
+}
+.Icon--hotels-accomodation {
+	.iconVariant("\e7ae");
+}
+.Icon--home {
+	.iconVariant("\e6ac");
+}
+.Icon--homeRoundNeg {
+	.iconVariant("\e6d4");
+}
+.Icon--armchair {
+	.iconVariant("\e7af");
+}
+.Icon--armchairRoundNeg {
+	.iconVariant("\e7b0");
+}
+.Icon--homesecurity {
+	.iconVariant("\e74d");
+}
+.Icon--homesecurityroundneg {
+	.iconVariant("\e74e");
+}
+.Icon--horseshoe {
+	.iconVariant("\e719");
+}
+.Icon--horseshoeRoundNeg {
+	.iconVariant("\e6fd");
+}
+.Icon--hunting {
+	.iconVariant("\e6ae");
+}
+.Icon--huntingroundneg {
+	.iconVariant("\e6f5");
+}
+.Icon--income {
+	.iconVariant("\e6af");
+}
+.Icon--incomeroundneg {
+	.iconVariant("\e6d8");
+}
+.Icon--umbrella {
+	.iconVariant("\e6b0");
+}
+.Icon--umbrellaRoundNeg {
+	.iconVariant("\e6e2");
+}
+.Icon--investmentandsavings {
+	.iconVariant("\e6b1");
+}
+.Icon--investmentandsavingsroundneg {
+	.iconVariant("\e6f7");
+}
+.Icon--diamond {
+	.iconVariant("\e7b1");
+}
+.Icon--diamondRoundNeg {
+	.iconVariant("\e7b2");
+}
+.Icon--lawnandgarden {
+	.iconVariant("\e750");
+}
+.Icon--lawnandgardenroundneg {
+	.iconVariant("\e751");
+}
+.Icon--lotteriesbets {
+	.iconVariant("\e6b2");
+}
+.Icon--lotteriesroundneg {
+	.iconVariant("\e6da");
+}
+.Icon--majorpurchases {
+	.iconVariant("\e6b3");
+}
+.Icon--majorpurchasesroundneg {
+	.iconVariant("\e6db");
+}
+.Icon--moviestheatresconcertsetc {
+	.iconVariant("\e6b7");
+}
+.Icon--moviestheatresconcertsetcroundneg {
+	.iconVariant("\e6f1");
+}
+.Icon--music {
+	.iconVariant("\e6b8");
+}
+.Icon--musicRoundNeg {
+	.iconVariant("\e6df");
+}
+.Icon--moving-vans-clean {
+	.iconVariant("\e7b3");
+}
+.Icon--moving-vans {
+	.iconVariant("\e7b4");
+}
+.Icon--parking {
+	.iconVariant("\e752");
+}
+.Icon--parkingroundneg {
+	.iconVariant("\e753");
+}
+.Icon--balloon {
+	.iconVariant("\e754");
+}
+.Icon--balloonRoundNeg {
+	.iconVariant("\e755");
+}
+.Icon--dogbone {
+	.iconVariant("\e6ba");
+}
+.Icon--dogboneRoundNeg {
+	.iconVariant("\e6de");
+}
+.Icon--phoneandinternet {
+	.iconVariant("\e756");
+}
+.Icon--phoneandinternetroundneg {
+	.iconVariant("\e757");
+}
+.Icon--phone {
+	.iconVariant("\e6bb");
+}
+.Icon--phoneRoundNeg {
+	.iconVariant("\e6dd");
+}
+.Icon--camera {
+	.iconVariant("\e6bc");
+}
+.Icon--cameraRoundNeg {
+	.iconVariant("\e6ed");
+}
+.Icon--postage-deliveries-clean {
+	.iconVariant("\e7b5");
+}
+.Icon--postage-deliveries {
+	.iconVariant("\e7b6");
+}
+.Icon--publictransportation {
+	.iconVariant("\e758");
+}
+.Icon--publictransportationroundneg {
+	.iconVariant("\e759");
+}
+.Icon--recycling {
+	.iconVariant("\e75a");
+}
+.Icon--recyclingroundneg {
+	.iconVariant("\e75b");
+}
+.Icon--reimbursablereimbursed {
+	.iconVariant("\e6c0");
+}
+.Icon--reimbursablereimbursedroundneg {
+	.iconVariant("\e6ff");
+}
+.Icon--restaurantscafes {
+	.iconVariant("\e6c1");
+}
+.Icon--restaurantscafesroundneg {
+	.iconVariant("\e6e9");
+}
+.Icon--roadtolls {
+	.iconVariant("\e75c");
+}
+.Icon--roadtollsroundneg {
+	.iconVariant("\e75d");
+}
+.Icon--shipWheel {
+	.iconVariant("\e6c2");
+}
+.Icon--shipWheelRoundNeg {
+	.iconVariant("\e701");
+}
+.Icon--shoppingservices {
+	.iconVariant("\e6c4");
+}
+.Icon--shoppingservicesroundneg {
+	.iconVariant("\e6dc");
+}
+.Icon--snowflake {
+	.iconVariant("\e6c5");
+}
+.Icon--snowflakeRoundNeg {
+	.iconVariant("\e702");
+}
+.Icon--smileyGlad {
+	.iconVariant("\e697");
+}
+.Icon--smileyGladRoundNeg {
+	.iconVariant("\e6f6");
+}
+.Icon--spamassageandpersonalcare {
+	.iconVariant("\e75e");
+}
+.Icon--spamassageandpersonalcareroundneg {
+	.iconVariant("\e75f");
+}
+.Icon--star {
+	.iconVariant("\e678");
+}
+.Icon--starroundneg {
+	.iconVariant("\e760");
+}
+.Icon--subscriptionsmedia {
+	.iconVariant("\e6c7");
+}
+.Icon--subscriptionsmediaroundneg {
+	.iconVariant("\e6e6");
+}
+.Icon--summerhouse {
+	.iconVariant("\e6c8");
+}
+.Icon--summerhouseRoundNeg {
+	.iconVariant("\e761");
+}
+.Icon--tobacco {
+	.iconVariant("\e6c9");
+}
+.Icon--tobaccoroundneg {
+	.iconVariant("\e700");
+}
+.Icon--tuitionandcourses {
+	.iconVariant("\e762");
+}
+.Icon--tuitionandcoursesroundneg {
+	.iconVariant("\e763");
+}
+.Icon--directionSign {
+	.iconVariant("\e6cb");
+}
+.Icon--directionSignRoundNeg {
+	.iconVariant("\e6d7");
+}
+.Icon--airplaneTakeOff {
+	.iconVariant("\e7b7");
+}
+.Icon--pairplaneTakeOffRoundNeg {
+	.iconVariant("\e7b8");
+}
+.Icon--transfers-between-own-accounts-clean {
+	.iconVariant("\e7b9");
+}
+.Icon--transfers-between-own-accounts {
+	.iconVariant("\e7ba");
+}
+.Icon--uncategorized-clean {
+	.iconVariant("\e7bb");
+}
+.Icon--uncategorized {
+	.iconVariant("\e7bc");
+}
+.Icon--videodvd {
+	.iconVariant("\e6cc");
+}
+.Icon--videodvdroundneg {
+	.iconVariant("\e6fb");
+}
+.Icon--meniga {
+	.iconVariant("\e67d");
+}
+.Icon--amex {
+	.iconVariant("\e67b");
+}
+.Icon--arion {
+	.iconVariant("\e67a");
+}
+.Icon--isb {
+	.iconVariant("\e66b");
+}
+.Icon--landsbankinn {
+	.iconVariant("\e675");
+}
+.Icon--masterofficial {
+	.iconVariant("\e674");
+}
+.Icon--mastercircles {
+	.iconVariant("\e764");
+}
+.Icon--masterhalfcircles {
+	.iconVariant("\e765");
+}
+.Icon--masterfullcircle {
+	.iconVariant("\e766");
+}
+.Icon--masterhalfcircleright {
+	.iconVariant("\e767");
+}
+.Icon--masterhalfcircleleft {
+	.iconVariant("\e768");
+}
+.Icon--masterhalfcircle {
+	.iconVariant("\e769");
+}
+.Icon--masterfullcircletext {
+	.iconVariant("\e76a");
+}
+.Icon--masterhalfcircletext {
+	.iconVariant("\e76b");
+}
+.Icon--mp {
+	.iconVariant("\e67f");
+}
+.Icon--sparisjodurinn {
+	.iconVariant("\e66a");
+}
+.Icon--visa {
+	.iconVariant("\e612");
+}
+.Icon--facebook2 {
+	.iconVariant("\e680");
+}
+.Icon--facebook {
+	.iconVariant("\e68d");
+}
+.Icon--pinterest {
+	.iconVariant("\e690");
+}
+.Icon--twitter {
+	.iconVariant("\e735");
+}
+.Icon--accounts {
+	.iconVariant("\e7bf");
+}
+.Icon--faq {
+	.iconVariant("\e7c0");
+}
+.Icon--getInTouch {
+	.iconVariant("\e7c1");
+}
+.Icon--signOut {
+	.iconVariant("\e7c2");
+}
+.Icon--termsOfUse {
+	.iconVariant("\e7c3");
+}
+.Icon--tutorials {
+	.iconVariant("\e7c4");
+}
+
+
+

@@ -1,0 +1,93 @@
+/********************************************
+	Label
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+//<button class="Button Button--myButton"></button>
+
+// -------------------- Variables --------------------
+@radio--disabled-color: #aaa;
+@radio--primary-fontColor: #06a3d5;
+@radio--success-fontColor: #57A62F;
+@radio--warning-fontColor: #ffae00;
+@radio--danger-fontColor: #D42020;
+
+@radio--xs-discSize: 11px;
+@radio--xs-fontSize: 11px;
+@radio--sm-discSize: 12px;
+@radio--sm-fontSize: 12px;
+@radio--lg-discSize: 14px;
+@radio--lg-fontSize: 14px;
+@radio--xl-discSize: 18px;
+@radio--xl-fontSize: 18px;
+
+@radio-icon-borderSize: 6px;
+
+// -------------------- Core LEGO --------------------
+.Radio {
+	.Radio();
+}
+
+// ------------------- Descendants--------------------
+.Radio-icon {
+	.Radio-icon();
+}
+
+.Radio-input {
+	.Radio-input();
+}
+
+// -------------------- Modifiers --------------------
+.Radio--inline {
+	display: inline-block;
+}
+
+.Radio-icon--primary {
+	.radioIconVariant(@radio--primary-fontColor)
+}
+
+.Radio-icon--success {
+	.radioIconVariant(@radio--success-fontColor)
+}
+
+.Radio-icon--warning {
+	.radioIconVariant(@radio--warning-fontColor)
+}
+
+.Radio-icon--danger {
+	.radioIconVariant(@radio--danger-fontColor)
+}
+
+.Radio--xs {
+	.radioIconSizeVariant(@radio--xs-discSize, @radio--xs-fontSize);
+}
+
+.Radio--sm {
+	.radioIconSizeVariant(@radio--sm-discSize, @radio--sm-fontSize);
+}
+
+.Radio--lg {
+	.radioIconSizeVariant(@radio--lg-discSize, @radio--lg-fontSize);
+}
+
+.Radio--xl {
+	.radioIconSizeVariant(@radio--xl-discSize, @radio--xl-fontSize);
+}
+
+// -------------------- States --------------------
+.Radio.is-disabled {
+	cursor: not-allowed;
+	color: @radio--disabled-color;
+
+	.Radio-input {
+		.radioIconVariant(@radio--disabled-color);
+	}
+}

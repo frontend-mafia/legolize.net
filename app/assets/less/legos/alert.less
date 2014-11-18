@@ -1,0 +1,85 @@
+/********************************************
+	Alert
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+
+// --- Global variables ---
+@alert-padding: 2;
+@alert-borderRadius: 5px;
+@alert-borderWidth: 1px;
+@alert-borderStyle: solid;
+@alert-borderColor: #333;
+@alert-bgColor: #fff;
+
+// --- Modifier variables ---
+@alert--primary-borderColor: blue;
+@alert--primary-backgroundColor: blue;
+
+@alert--success-borderColor: green;
+@alert--success-bgColor: green;
+
+@alert--warning-borderColor: yellow;
+@alert--warning-bgColor: yellow;
+
+@alert--danger-borderColor: red;
+@alert--danger-bgColor: red;
+
+@alert--simple-bgColor: #fff;
+@alert--simple-borderWidth: 2px;
+
+// -------------------- Core LEGO ------------------------
+.Alert {
+	.Alert();
+}
+
+// -------------------- Descendants ----------------------
+.Alert-closeButton {
+	.Alert-closeButton();
+}
+
+// -------------------- Type modifiers --------------------
+.Alert--success {
+	.createAlertVariant(@alert--success-borderColor, @alert--success-bgColor);
+}
+
+.Alert--primary {
+	.createAlertVariant(@alert--primary-borderColor, @alert--primary-backgroundColor);
+}
+
+.Alert--warning {
+	.createAlertVariant(@alert--warning-borderColor, @alert--warning-bgColor);
+}
+
+.Alert--danger {
+	.createAlertVariant(@alert--danger-borderColor, @alert--danger-bgColor);
+}
+
+.Alert--success-simple {
+	.createAlertVariant(@alert--success-borderColor, @alert--simple-bgColor, @alert--simple-borderWidth);
+	color: @alert--success-borderColor;
+}
+
+.Alert--primary-simple {
+	.createAlertVariant(@alert--primary-borderColor, @alert--simple-bgColor, @alert--simple-borderWidth);
+	color: @alert--primary-borderColor;
+}
+
+.Alert--warning-simple {
+	.createAlertVariant(@alert--warning-borderColor, @alert--simple-bgColor, @alert--simple-borderWidth);
+	color: @alert--warning-borderColor;
+}
+
+.Alert--danger-simple {
+	.createAlertVariant(@alert--danger-borderColor, @alert--simple-bgColor, @alert--simple-borderWidth);
+	color: @alert--danger-borderColor;
+}

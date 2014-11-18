@@ -1,0 +1,111 @@
+/********************************************
+	Label
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+//<button class="Button Button--myButton"></button>
+
+// -------------------- Variables --------------------
+
+//Type modifiers variables
+@label--white-bgColor: #fff;
+@label--white-fontColor: #5b5b5b;
+
+@label--primary-bgColor: #06a3d5;
+@label--primary-fontColor: #fff;
+
+@label--success-bgColor: #57a62f;
+@label--success-fontColor: #fff;
+
+@label--warning-bgColor: #ffae00;
+@label--warning-fontColor: #fff;
+
+@label--danger-bgColor: #D42020;
+@label--danger-fontColor: #fff;
+
+@label--disabled-bgColor: #dedede;
+@label--disabled-fontColor: #888;
+
+//Size modifiers variables
+@label--xs-horizontalPadding: 4px;
+@label--xs-fontSize: 11px;
+@label--xs-lineHeight: 15px;
+@label--xs-borderRadius: 2px;
+
+@label--sm-horizontalPadding: 8px;
+@label--sm-fontSize: 12px;
+@label--sm-lineHeight: 20px;
+@label--sm-borderRadius: 2px;
+
+@label--lg-horizontalPadding: 16px;
+@label--lg-fontSize: 16px;
+@label--lg-lineHeight: 30px;
+@label--lg-borderRadius: 4px;
+
+@label--xl-padding-vertical: 10px;
+@label--xl-horizontalPadding: 20px;
+@label--xl-fontSize: 18px;
+@label--xl-lineHeight: 32px;
+@label--xl-borderRadius: 4px;
+
+// -------------------- Core LEGO --------------------
+.Label {
+	.Label();
+
+	.margin-top(2);
+	.margin-bottom(2);
+}
+
+// -------------------- States --------------------
+
+// -------------------- Type modifiers --------------------
+.Label-icon--left {
+	float: left;
+	margin-right: 3px;
+}
+
+.Label-icon--right {
+	float: right;
+	margin-left: 3px;
+}
+
+.Label--primary {
+	.labelTypeVariant(@label--primary-bgColor, @label--primary-fontColor);
+}
+
+.Label--success {
+	.labelTypeVariant(@label--success-bgColor, @label--success-fontColor);
+}
+
+.Label--warning {
+	.labelTypeVariant(@label--warning-bgColor, @label--warning-fontColor);
+}
+
+.Label--danger {
+	.labelTypeVariant(@label--danger-bgColor, @label--danger-fontColor);
+}
+
+// -------------------- Size Modifiers --------------------
+.Label--xs {
+	.labelSizeVariant(@label--xs-horizontalPadding; @label--xs-fontSize; @label--xs-lineHeight; @label--xs-borderRadius);
+}
+
+.Label--sm {
+	.labelSizeVariant(@label--sm-horizontalPadding; @label--sm-fontSize; @label--sm-lineHeight; @label--sm-borderRadius);
+}
+
+.Label--lg {
+	.labelSizeVariant(@label--lg-horizontalPadding; @label--lg-fontSize; @label--lg-lineHeight; @label--lg-borderRadius);
+}
+
+.Label--xl {
+	.labelSizeVariant(@label--xl-horizontalPadding; @label--xl-fontSize; @label--xl-lineHeight; @label--xl-borderRadius);
+}

@@ -1,0 +1,63 @@
+/********************************************
+	Caret
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables ---------------------
+@caret-borderColor: #333;
+@caret-bgColor: #fff;
+@caret-default-size: 6px;
+
+@caret--xs-size: 4px;
+@caret--sm-size: 5px;
+@caret--lg-size: 7px;
+@caret--xl-size: 8px;
+
+// -------------------- Core LEGO ---------------------
+.Caret {
+	.Caret();
+}
+// -------------------- Descendants --------------------
+
+// ---------------------- Variants ----------------------
+.Caret--inside {
+	.Caret--inside();
+
+	&.Caret--top    { left: 50%; top: 0; }
+	&.Caret--right  { top: 50%;  right: 0; }
+	&.Caret--bottom { left: 50%; bottom: 0; }
+	&.Caret--left   { top: 50%;  left: 0; }
+}
+
+.Caret--top    { .Caret--top(); }
+.Caret--right  { .Caret--right(); }
+.Caret--bottom { .Caret--bottom(); }
+.Caret--left   { .Caret--left(); }
+
+.Caret--top.Caret--xs 	 { .Caret--top-Caret--xs(); }
+.Caret--right.Caret--xs  { .Caret--right-Caret--xs(); }
+.Caret--bottom.Caret--xs { .Caret--bottom-Caret--xs(); }
+.Caret--left.Caret--xs   { .Caret--left-Caret--xs(); }
+
+.Caret--top.Caret--sm 	 { .Caret--top-Caret--sm(); }
+.Caret--right.Caret--sm  { .Caret--right-Caret--sm(); }
+.Caret--bottom.Caret--sm { .Caret--bottom-Caret--sm(); }
+.Caret--left.Caret--sm   { .Caret--left-Caret--sm(); }
+
+.Caret--top.Caret--lg 	 { .Caret--top-Caret--lg(); }
+.Caret--right.Caret--lg  { .Caret--right-Caret--lg(); }
+.Caret--bottom.Caret--lg { .Caret--bottom-Caret--lg(); }
+.Caret--left.Caret--lg   { .Caret--left-Caret--lg(); }
+
+.Caret--top.Caret--xl 	 { .Caret--top-Caret--xl(); }
+.Caret--right.Caret--xl  { .Caret--right-Caret--xl(); }
+.Caret--bottom.Caret--xl { .Caret--bottom-Caret--xl(); }
+.Caret--left.Caret--xl   { .Caret--left-Caret--xl(); }

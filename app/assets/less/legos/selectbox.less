@@ -1,0 +1,128 @@
+/********************************************
+	Selectbox
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// -------------------- Variables --------------------
+
+@selectbox-default-borderColor: #dedede;
+@selectbox-default-fontColor: #585858;
+
+@selectbox-focus-borderColor: #dedede;
+@selectbox-focus-fontColor: #585858;
+
+@selectbox-active-borderColor: #c8c8c8;
+@selectbox-active-fontColor: #06a3d5;
+
+@selectbox-disabled-borderColor: #cacaca;
+@selectbox-disabled-fontColor: #888;
+
+@selectbox-primary-borderColor: #06a3d5;
+@selectbox-primary-fontColor: #06a3d5;
+
+@selectbox-success-borderColor: #57a62f;
+@selectbox-success-fontColor: #57a62f;
+
+@selectbox-warning-borderColor: #ffae00;
+@selectbox-warning-fontColor: #ffae00;
+
+@selectbox-error-borderColor: #d42020;
+@selectbox-error-fontColor: #d42020;
+
+@selectbox--xs-fontSize: @base-fontSize--xs;
+@selectbox--sm-fontSize: @base-fontSize--sm;
+@selectbox--lg-fontSize: @base-fontSize--lg;
+@selectbox--xl-fontSize: @base-fontSize--xl;
+
+// -------------------- Core LEGO --------------------
+.Selectbox {
+	.Selectbox();
+	.selectboxVariant(@selectbox-default-borderColor, @selectbox-default-fontColor);
+
+	.margin-top(1);
+	.margin-bottom(1);
+}
+
+// -------------------- Descendants --------------------
+.Selectbox-input {
+	.Selectbox-input();
+}
+
+// -------------------- States --------------------
+.Selectbox.is-active {
+	.selectboxVariant(@selectbox-active-borderColor, @selectbox-active-fontColor);
+}
+
+.Selectbox.is-disabled {
+	.selectboxVariant(@selectbox-disabled-borderColor, @selectbox-disabled-fontColor);
+	cursor: not-allowed;
+}
+
+// -------------------- Modifiers --------------------
+.Selectbox--primary {
+	.selectboxVariant(@selectbox-primary-borderColor, @selectbox-primary-fontColor);
+}
+
+.Selectbox--success {
+	.selectboxVariant(@selectbox-success-borderColor, @selectbox-success-fontColor);
+}
+
+.Selectbox--warning {
+	.selectboxVariant(@selectbox-warning-borderColor, @selectbox-warning-fontColor);
+}
+
+.Selectbox--error {
+	.selectboxVariant(@selectbox-error-borderColor, @selectbox-error-fontColor);
+}
+
+.Selectbox--xs {
+	.selectboxSize(@selectbox--xs-fontSize);
+}
+
+.Selectbox--sm {
+	.selectboxSize(@selectbox--sm-fontSize);
+}
+
+.Selectbox--lg {
+	.selectboxSize(@selectbox--lg-fontSize)
+}
+
+.Selectbox--xl {
+	.selectboxSize(@selectbox--xl-fontSize)
+}
+
+.Selectbox--tiny {
+	.selectboxWidth(50px);
+}
+
+.Selectbox--short {
+	.selectboxWidth(130px);
+}
+
+.Selectbox--medium {
+	.selectboxWidth(180px);
+}
+
+.Selectbox--long {
+	.selectboxWidth(260px);
+}
+
+//Custom modifiers
+
+.Selectbox--thin {
+	.Selectbox-input {
+		padding:2px;
+	}
+
+	&:after {
+		top:-4px;
+	}
+}

@@ -1,0 +1,118 @@
+/********************************************
+	Progress
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+// --- Global variables ---
+// Either use baseline units or pixels for margin/padding/height
+//@panel-marginTop: 2;
+//@panel-marginBottom: 2;
+//@panel-borderRadius: 8px;
+//@panel-heading-fontFamily: inherit;
+//@panel-heading-marginTop: 1;
+//@panel-heading-marginBottom: 1;
+//@panel-heading-paddingLeft: 10px;
+//@panel-heading-paddingRight: 10px;
+//@panel-body-paddingLeft: 10px;
+//@panel-body-paddingRight: 10px;
+//
+//// --- Default modifier ---
+//@panel-color: inherit;
+//@panel-bgColor: #fff;
+//@panel-border: 1px solid darken(@panel-bgColor, 20%);
+//@panel-header-bgColor: darken(@panel-bgColor, 10%);
+//@panel-heading-color: inherit;
+
+// --- Modifier variables ---
+@progress--default-bar-bgColor: #D0D0D0;
+@progress--primary-bar-bgColor: #06a3d5;
+@progress--success-bar-bgColor: #57a62f;
+@progress--warning-bar-bgColor: #ffae00;
+@progress--danger-bar-bgColor: #d42020;
+
+@progress-statusMark--primary-content:  "\e61c";
+@progress-statusMark--primary-color: #06a3d5;
+@progress-statusMark--primary-fontSize: 25px;
+
+@progress-statusMark--success-content: "\e62d";
+@progress-statusMark--success-color: #57a62f;
+@progress-statusMark--success-fontSize: 25px;
+
+@progress-statusMark--warning-content: "\e67c";;
+@progress-statusMark--warning-color: #FFAE00;
+@progress-statusMark--warning-fontSize: 25px;
+
+@progress-statusMark--danger-content: "\e611";
+@progress-statusMark--danger-color: #D42020;
+@progress-statusMark--danger-fontSize: 25px;
+
+@icon-fontSize: 25px;
+
+// -------------------- Core LEGO --------------------
+.Progress {
+	.Progress();
+	.createProgressModifier(@progress--default-bar-bgColor);
+	.margin-bottom(1);
+}
+
+// -------------------- Descendands --------------------
+.Progress-bar {
+	.Progress-bar();
+}
+
+.Progress-currentMark {
+	.Progress-currentMark();
+}
+
+.Progress-statusMark {
+	.Progress-statusMark();
+}
+
+.Progress-currentMarkBalloon {
+	.Progress-currentMarkBalloon();
+}
+
+.Progress-label {
+	.Progress-label();
+}
+
+// -------------------- Modifiers --------------------
+.Progress-bar--primary {
+	.createProgressModifier(@progress--primary-bar-bgColor);
+}
+
+.Progress-bar--success {
+	.createProgressModifier(@progress--success-bar-bgColor);
+}
+
+.Progress-bar--warning {
+	.createProgressModifier(@progress--warning-bar-bgColor);
+}
+
+.Progress-bar--danger {
+	.createProgressModifier(@progress--danger-bar-bgColor);
+}
+
+.Progress-statusMark--primary {
+	.createStatusMarkModifier(@progress-statusMark--primary-color, @icon-fontSize);
+}
+
+.Progress-statusMark--success {
+	.createStatusMarkModifier(@progress-statusMark--success-color, @icon-fontSize);
+}
+
+.Progress-statusMark--warning {
+	.createStatusMarkModifier(@progress-statusMark--warning-color, @icon-fontSize);
+}
+
+.Progress-statusMark--danger {
+	.createStatusMarkModifier(@progress-statusMark--danger-color, @icon-fontSize);
+}

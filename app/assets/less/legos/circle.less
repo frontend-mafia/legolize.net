@@ -1,0 +1,62 @@
+/********************************************
+	Circle
+********************************************/
+
+/// Naming conventions:
+// LegoName
+// LegoName--modifierName
+// LegoName-descendantName
+// LegoName.is-stateOfLego
+// Variable names:
+// @legoModifier-property ex: @buttonPrimary-borderColor
+// @legoModifier-descendand-property ex: @listGroup-itemHeading-fontSize
+
+//<div class="Circle Circle--bordered"></div>
+
+// -------------------- Variables --------------------
+
+//@circle-color: #fff;
+@circle-dimensionUnits: 114px;
+//// Either use pixels, percentages or baseline units
+//
+//// Bordered modifier
+//@circle--bordered-borderWidth: 5px;
+//@circle--bordered-borderColor: #e3e3e3;
+//@circle--bordered-borderStyle: solid;
+//
+//// Filled modifier
+//@circle--filled-backgroundColor: #06a3d4;
+//
+//// Inner circle
+//@circle-inner-borderColor: #fff;
+//@circle-inner-backgroundColor: #06a3d4;
+//
+//// Rectangular fill
+//@circle-fill-backgroundColor: #06a3d4;
+//@circle-fill-zIndex: 10;
+
+// -------------------- Core LEGO --------------------
+
+.Circle {
+	.Circle();
+}
+
+// -------------------- Descendands --------------------
+
+// When we want a fill that we can move up and down
+.Circle-fill {
+	.Circle-fill();
+}
+
+.Circle-media {
+	.Circle-media();
+}
+
+// -------------------- Modifiers --------------------
+.Circle--filled {
+	.Circle--filled();
+}
+
+.Circle--bordered {
+	.Circle--bordered();
+}
