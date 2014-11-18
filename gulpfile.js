@@ -100,7 +100,8 @@ gulp.task('server', function () {
 });
 
 // ---------- Deploy to gh pages ----------
+var deployOptions = {};
 gulp.task('deploy', function () {
 	return gulp.src('./dist/**/*')
-		.pipe(deploy(options));
+		.pipe(deploy(deployOptions));
 });
