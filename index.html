@@ -1,1 +1,55 @@
-Legolize GitHub Page
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<base href="/">
+		<link rel="stylesheet" href="assets/css/app.css">
+		<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	</head>
+	<body class="App" ng-app="app">
+
+		<ui-view></ui-view>
+
+		<!-- inject:vendorjs -->
+		<script src="assets/vendor/jquery/dist/jquery.js"></script>
+		<script src="assets/vendor/angular/angular.js"></script>
+		<script src="assets/vendor/angular-resource/angular-resource.js"></script>
+		<script src="assets/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+		<!-- endinject -->
+
+		<!-- inject:appjs -->
+		<script src="modules/app.js"></script>
+		<script src="modules/home/home.module.js"></script>
+		<script src="modules/home/controllers/home.controller.js"></script>
+		<!-- endinject -->
+
+		<!-- Grid assistant -->
+<!--
+		<link href="assets/vendor/headsupgrid/hugrid.css" type="text/css" rel="stylesheet" />
+		<script src="assets/vendor/headsupgrid/hugrid.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				pageUnits = 'px';
+				colUnits = 'px';
+				pagewidth = 1160;
+				columns = 12;
+				columnwidth = 82;
+				gutterwidth = 16;
+				pagetopmargin = 0;
+				rowheight = 6;
+				gridonload = 'off';
+				makehugrid();
+				setgridonload();
+			});
+		</script>
+-->
+	</body>
+</html>
