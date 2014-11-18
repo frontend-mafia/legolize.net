@@ -1,0 +1,29 @@
+{
+  "name": "legolize-pages",
+  "version": "0.1.0",
+  "homepage": "https://github.com/frontend-mafia/legolize",
+  "authors": [
+    "Haukur Már Böðvarsson <haukurmar@gmail.com>"
+  ],
+  "description": "Demo page for all Lego's in Legolize",
+  "main": "index.html",
+  "keywords": [
+    "legolize"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "legolize": "latest",
+    "angular": "~1.3.3",
+    "angular-ui-router": "~0.2.12",
+    "jquery": "~2.1.1",
+    "angular-resource": "~1.3.3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "paths": {
+    "src": "app/",
+    "assets": "assets/",
+    "dist": "dist/",
+    "vendors": "vendor/",
+    "modules": "modules/"
+  },
+  "styles": {
+    "lessFolderToCompile": "less/",
+    "lessFilePatternToWatch": "**/*.less",
+    "lessFilePatternToCompile": "*.less",
+    "cssOutputFolder": "css/",
+    "minifyCss": false
+  },
+  "server": {
+    "port": "1337",
+    "livereload": true
+  },
+  "vendors": [
+    "jquery/dist/jquery.min.js",
+    "angular/angular.js",
+    "angular-resource/angular-resource.js",
+    "angular-ui-router/release/angular-ui-router.js"
+  ]
+}
